@@ -1,0 +1,211 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% block title %}
+  <title>Momento IF</title>
+  {% endblock title %}
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" >
+  <link rel="stylesheet" href= {% static "css/style.css" %} >
+ 
+</head>
+<body>
+<!-- MENU -->
+  {% block nav %}
+  <nav class="nav_header">
+    <!--  LOGO   -->
+    <div class="nav_logo">
+      <img class="logo" src= {% static "img/momentoIF.jpg"  %} alt="">
+    </div>
+    <!--   LINKS   -->
+    <ul class="nav_links">
+      <a href="#"> 
+        <li><span><i class="ri-home-4-line"></i></span> Inicio</li> 
+      </a>
+      <a href="#"> 
+        <li>Quem somos</li> 
+      </a>
+      <a href="#"> 
+        <li>Mentes Inspiradoras</li>
+      </a>
+    </ul>
+    <!--   BUSCAR ENTRAR   -->
+    <div class="nav_buscar">   
+      <input type="text" placeholder ="Buscar">
+    </div>
+    <div class="btn_entrar">
+      <a href="#">
+        <button>
+          <span><i class="ri-user-3-line"></i></span>Entrar
+        </button>
+      </a>
+    </div>
+    
+  </nav>
+  {% endblock nav %}
+
+<!--_____MAIN_____-->
+  {% block main %}
+  <main>
+    
+    <div class="principais">
+      <h1>
+        <span class="circle_externo">.</span>
+          <span class="circle_interno">.</span> 
+              Principais notícias!
+          <span class="circle_interno">.</span>
+        <span class="circle_externo">.</span> 
+      </h1>
+      <p class="descricao">Confira os assuntos mais falados no Campus</p>
+    </div>
+    
+  <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://services.meteored.com/img/article/inteligencia-artificial-aprende-a-reconstruir-imagens-vistas-por-pessoas-ciencia-fotos-1679175318563_1280.jpg" alt="Primeiro Slide">
+          <p>Informação de teste para ser colocado no carousel Informação de teste para ser colocado no carousel</p>
+        </div>
+        
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://s2-techtudo.glbimg.com/YV466w-hUwF_dTQIHPj_sbg9pW4=/0x0:1536x864/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/P/F/9THicRSG2c2VTkIKVkAw/imagine.art-ai-2.png" alt="Segundo Slide"> <p>Informação de teste para ser colocado no carousel</p>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://conteudize.ai/blog/wp-content/uploads/2024/06/como-criar-prompts-para-geracao-de-imagens-com-ia.webp" alt="Terceiro Slide"> 
+          <p>Informação de teste para ser colocado no carousel</p>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+
+    {% block conteudo %}
+    <section class="conteudo">
+      <section class="noticias">
+
+        <div class="noticias_recentes">
+          <div class="mais_recentes">
+            <span class="relogio"><i  class="ri-time-line"></i>
+            </span>
+            <p>Mais Recentes</p>
+          </div>
+
+          <div class="pesquisa">
+            <i class="ri-search-line"></i>
+            <input class=""   placeholder="Pesquisar..."> </input>
+          </div>
+        </div>
+
+        <div class="notocia_id">
+          <div>
+            <img src= {% static "img/IMG_2768.png" %}  alt="">
+          </div>  
+          <div class="noticia_id_esquerda">
+            <p class="type">Eventos</p>
+            <h2>Expotec reune professores e alunos  para bate-papo sobre tecnologia</h2>
+            <span class>Há 2 horas</span>
+          </div>
+        </div>
+
+        <div class="notocia_id">
+          <div>
+            <img src= {% static "img/IMG_2768.png" %}  alt="">
+          </div>  
+          <div class="noticia_id_esquerda">
+            <p class="type">Eventos</p>
+            <h2>Expotec reune professores e alunos  para bate-papo sobre tecnologia</h2>
+            <span class>Há 2 horas</span>
+          </div>
+        </div>
+        {% comment %} <div class="notocia_id">
+          <img src=  {% static "img/IMG_2768.png" %} alt="">
+          <div class="noticia_id_esquerda">
+            <p class="type">Eventos</p>
+            <h2>Expotec reune professores e alunos  para bate-papo sobre tecnologia</h2>
+            <span class>Há 2 horas</span>
+          </div>
+        </div> {% endcomment %}
+
+        <div class="notocia_id">
+          <div>
+            <img src= {% static "img/IMG_2768.png" %} alt="">
+          </div>  
+          <div class="noticia_id_esquerda">
+            <p class="type">Eventos</p>
+            <h2>Expotec reune professores e alunos  para bate-papo sobre tecnologia</h2>
+            <span class>Há 2 horas</span>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="utilidades">
+        <div class="logo_utilidades">
+          <i class="ri-error-warning-line"></i>
+          <p>Utilidades</p>
+        </div>
+
+        <div class="cardapio">
+          <h2>Cardapio do dia</h2>
+          <img class="merenda" src= {% static "img/merenda.png" %} alt="">
+          <img class="almoco" src= {% static "img/almoco.png" %} alt="">
+        </div>
+
+        <div class="servicos">
+          <h2>Serviços</h2>
+          <p>Precisa de equipamento emprestado?</p>
+          <button type="button ">Clique aqui</button>
+        </div>
+      </section>
+    </section>
+    {% endblock conteudo %}
+
+  </main>
+  {% endblock main %}
+
+  {% block footer %}
+  <footer>
+    <div class="img_footer">
+      <img src= {% static "img/Campus Pau dos Ferros - Logo_Negat Vert 1.png" %} alt="">
+    </div>
+    <div class="info_footer">
+      <h3>Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte - Campus Pau dos Ferros</h3>
+      <p><strong>Endereço:</strong> BR 405, Km 154, s/n, Bairro Chico Cajá - 59900-000</p>
+      <p><strong>E-mail:</strong> comunicacao.pf@ifrn.edu.br - Pau dos Ferros-RN</p>
+      <p><strong>Telefone:</strong>(84) 4005 4109</p>
+      <div class="social">
+        <i class="ri-twitter-x-line"></i>
+        <i class="ri-instagram-line"></i>
+        <i class="ri-facebook-fill"></i>
+        <i class="ri-youtube-fill"></i>
+      </div>
+    </div>
+  </footer>
+  {% endblock footer %}
+
+<script src= "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous" ></script>
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+ 
+</html>
