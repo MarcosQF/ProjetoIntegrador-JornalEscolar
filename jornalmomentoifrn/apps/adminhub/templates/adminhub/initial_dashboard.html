@@ -1,0 +1,10 @@
+{% extends 'admhub/base_admhub.html' %}
+{%load static%}
+{% block title %}Página Inicial{% endblock %}
+{% block css %} <link rel="stylesheet" href= {% static "css/initial_style.css" %} >{% endblock %}
+{% block profile_image %}{% static 'images/mulher_perfil.jpeg' %}{% endblock %}
+
+{% block content %}
+    <h1>Bem-vindo à nossa página inicial!</h1>
+    <p>Conteúdo específico da página inicial.</p>
+{% endblock %}
