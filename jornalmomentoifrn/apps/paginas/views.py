@@ -7,3 +7,6 @@ class IndexViews(TemplateView):
 
 class ModeloViews(TemplateView):
   template_name = "paginas/modelo.html"
+
+class MentesViews(TemplateView):
+  template_name = "paginas/mentes.html"
