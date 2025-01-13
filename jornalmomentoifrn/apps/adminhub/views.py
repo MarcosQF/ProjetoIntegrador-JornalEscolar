@@ -4,3 +4,7 @@ from django.views.generic import TemplateView
 
 class InitialDashboardViews(TemplateView):
   template_name = "adminhub/initial_dashboard.html"
+
+
+class UsersDashboardViews(TemplateView):
+  template_name = "adminhub/users.html"

@@ -11,7 +11,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-
+ 
   <ul>
     <div class="sidebar close">
       <div class="profile-details">
@@ -20,12 +20,13 @@
         </div>
         <div class="name-job">
           <div class="profile_name">Ana Clara</div>
-          <div class="job">Editora</div>
+          <div class="job">Administrador</div>
         </div>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="#">
+          <a href="{% url 'initial-dashboard-path' %}">
+            
             <i class='bx bx-home-smile' style='color:#ffffff' ></i>
             <span class="link_name">Início</span>
           </a>
@@ -61,7 +62,15 @@
             <li><a href="#">Denunciados</a></li>
           </ul>
         </li>
-  
+        <li>
+          <a href="{% url 'users-dashboard-path' %}">
+            <i class='bx bx-group' style='color:#ffffff' ></i>
+            <span class="link_name">Usuários</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Usuários</a></li>
+          </ul>
+        </li>
         <li>
           <a href="#"  >
             <i class='bx bx-log-out' style='color:#f70707'  ></i>

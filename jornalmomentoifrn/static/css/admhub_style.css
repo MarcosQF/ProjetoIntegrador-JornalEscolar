@@ -215,7 +215,7 @@ color: #f70707; /* Cor padrão do texto */
 }
 .home-section{
   position: relative;
-  background: #062601;
+  background: #fff;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -266,3 +266,4 @@ color: #f70707; /* Cor padrão do texto */
     left: 0;
   }
 }
+
