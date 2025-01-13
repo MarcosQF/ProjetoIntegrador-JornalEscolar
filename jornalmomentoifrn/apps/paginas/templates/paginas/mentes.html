@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,13 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@350&icon_names=home,play_arrow"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="mentes.css">
+    <link rel="stylesheet" href="{% static "css/mentes.css" %}">
     <title>Momento IFRN - Mentes Inspiradoras</title>
 </head>
 
 <body>
     <header>
-        <img src="assets/logo-momento.jpg" alt="logo do Momento IFRN">
+        <img src = "{% static "img/logo-momento.jpg" %}" alt="logo do Momento IFRN">
         <nav>
             <a href="#" class="home-link">
                 <span class="material-symbols-outlined">
@@ -33,7 +35,7 @@
         <div class="search-container">
             <input type="text" placeholder="Buscar">
             <button>
-                <img src="assets/iconePessoa.png" alt="Ícone de Perfil">
+                <img src = "{% static "img/iconePessoa.png" %}" alt="Ícone de Perfil">
                 Entrar
             </button>
         </div>
