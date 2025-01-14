@@ -12,6 +12,9 @@ class UsersDashboardViews(TemplateView):
 class PostsDashboardViews(TemplateView):
   template_name = "adminhub/posts.html"
 
+class ReportedCommentsViews(TemplateView):
+  template_name = "adminhub/comment_reported.html"
+
 class CreatePostViews(FormView):
     template_name = "adminhub/create_post.html"
     form_class = CreatePostForm  # O formulário que será exibido
