@@ -9,6 +9,9 @@ class InitialDashboardViews(TemplateView):
 class UsersDashboardViews(TemplateView):
   template_name = "adminhub/users.html"
 
+class PostsDashboardViews(TemplateView):
+  template_name = "adminhub/posts.html"
+
 class CreatePostViews(FormView):
     template_name = "adminhub/create_post.html"
     form_class = CreatePostForm  # O formulário que será exibido

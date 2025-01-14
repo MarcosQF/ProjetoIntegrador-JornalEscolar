@@ -1,0 +1,248 @@
+{% extends 'admhub/base_admhub.html' %}
+{%load static%}
+{% block title %}Página Inicial{% endblock %}
+
+{% block css %}  
+<link rel="stylesheet" href= {% static "css/checkbox.css" %} >
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+{% endblock %}
+
+{% block profile_image %}{% static 'images/mulher_perfil.jpeg' %}{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br" class="antialiased">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DataTables </title>
+	<meta name="description" content="(Formerly Tailwind Toolbox) ">
+	<meta name="keywords" content="">
+	<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href= {% static "css/tables_style.css" %} >
+    <link rel="stylesheet" href= {% static "css/posts_icons_style.css" %} >
+    <link rel="stylesheet" href="btn.css" />
+</head>
+
+<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+
+
+	<!--Container-->
+	<div class="container w-full md:w-4.5/5 xl:w-/5/5  mx-auto px-2">
+
+		<!--Title-->
+		<h1 class="flex items-center font-inter font-medium break-normal text-black-500 px-2 py-8 text-3xl md:text-3xl">
+			Notícias
+		</h1>
+
+
+		<!--Card-->
+		<div id='recipients' class="p-8 mt-6 lg:mt-0 border-2 bg-white font-inter">
+
+
+			<table id="example" class="stripe hover cell-border font-inter" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+				<thead>
+					<tr>
+                        <th class="font-inter font-medium "data-priority="1">Título</th>
+                        <th class="font-inter font-medium "data-priority="2">Autor</th>
+                        <th class="font-inter font-medium "data-priority="3">Categoira</th>
+                        <th class="font-inter font-medium "data-priority="4">Data de Publicação</th>
+                        <th class="font-inter font-medium "data-priority="5">Ação</th>
+					</tr>
+				</thead>
+				<tbody>
+
+                    <tr>
+                        <td class="font-inter font-light">Nova série de ficção científica lançada pela Netflix</td>
+                        <td class="font-inter font-light">Ana Silva</td>
+                        <td class="font-inter font-light">Entretenimento</td>
+                        <td class="font-inter font-light">Publicado em 01/01/2025 às 09:00 am</td>
+                        <td class="font-inter font-light">
+                           <a href=""><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href=""><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Lançamento do novo smartphone da Samsung</td>
+                        <td class="font-inter font-light">Carlos Oliveira</td>
+                        <td class="font-inter font-light">Tecnologia</td>
+                        <td class="font-inter font-light">Publicado em 02/01/2025 às 10:15 am</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Novo método de ensino online revoluciona a educação</td>
+                        <td class="font-inter font-light">Maria Fernandes</td>
+                        <td class="font-inter font-light">Educação</td>
+                        <td class="font-inter font-light">Publicado em 03/01/2025 às 11:20 am</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Nova vacina contra a gripe promete ser mais eficaz</td>
+                        <td class="font-inter font-light">Lucas Mendes</td>
+                        <td class="font-inter font-light">Saúde</td>
+                        <td class="font-inter font-light">Publicado em 04/01/2025 às 12:05 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">O impacto das taxas de juros na economia global</td>
+                        <td class="font-inter font-light">Pedro Lima</td>
+                        <td class="font-inter font-light">Economia</td>
+                        <td class="font-inter font-light">Publicado em 05/01/2025 às 01:00 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Discussão sobre a reforma tributária no Congresso</td>
+                        <td class="font-inter font-light">Ricardo Pereira</td>
+                        <td class="font-inter font-light">Política</td>
+                        <td class="font-inter font-light">Publicado em 06/01/2025 às 02:15 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Novo blockbuster de super-heróis chega aos cinemas</td>
+                        <td class="font-inter font-light">Renata Souza</td>
+                        <td class="font-inter font-light">Entretenimento</td>
+                        <td class="font-inter font-light">Publicado em 07/01/2025 às 03:00 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">A revolução dos carros autônomos no mercado de transporte</td>
+                        <td class="font-inter font-light">Gustavo Costa</td>
+                        <td class="font-inter font-light">Tecnologia</td>
+                        <td class="font-inter font-light">Publicado em 08/01/2025 às 04:20 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Melhorias nos currículos das escolas públicas</td>
+                        <td class="font-inter font-light">Beatriz Alves</td>
+                        <td class="font-inter font-light">Educação</td>
+                        <td class="font-inter font-light">Publicado em 09/01/2025 às 05:30 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Tratamento inovador para o câncer de mama</td>
+                        <td class="font-inter font-light">Fernanda Ribeiro</td>
+                        <td class="font-inter font-light">Saúde</td>
+                        <td class="font-inter font-light">Publicado em 10/01/2025 às 06:00 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Subida do dólar afeta as exportações brasileiras</td>
+                        <td class="font-inter font-light">Thiago Moreira</td>
+                        <td class="font-inter font-light">Economia</td>
+                        <td class="font-inter font-light">Publicado em 11/01/2025 às 07:10 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Nova proposta de política educacional no Brasil</td>
+                        <td class="font-inter font-light">Ricardo Martins</td>
+                        <td class="font-inter font-light">Política</td>
+                        <td class="font-inter font-light">Publicado em 12/01/2025 às 08:00 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Estudo mostra que a saúde mental das crianças está em risco</td>
+                        <td class="font-inter font-light">Juliana Castro</td>
+                        <td class="font-inter font-light">Saúde</td>
+                        <td class="font-inter font-light">Publicado em 13/01/2025 às 09:15 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="font-inter font-light">Estreia de filme biográfico sobre Steve Jobs nos cinemas</td>
+                        <td class="font-inter font-light">Paula Torres</td>
+                        <td class="font-inter font-light">Entretenimento</td>
+                        <td class="font-inter font-light">Publicado em 14/01/2025 às 10:30 pm</td>
+                        <td class="font-inter font-light">
+                           <a href="#"><i class='bx bx-message-square-edit' style='color:#008000'></i></a>
+                           <a href="#"><i class='bx bx-message-square-x' style='color:#db1010'></i></a>
+                        </td>
+                     </tr>
+                     <!-- Adicione mais 15 registros para completar a lista de 30 -->
+                     
+
+				</tbody>
+			</table>
+		</div>
+		<!--/Card-->
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+	<!--Datatables -->
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			var table = $('#example').DataTable({
+				responsive: true
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'
+                }
+			})
+				.columns.adjust()
+				.responsive.recalc();
+		});
+	</script>
+
+<script>
+    $(document).ready(function () {
+        var table = $('#example').DataTable({
+            responsive: true,
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'
+            }
+        })
+        .columns.adjust()
+        .responsive.recalc();
+    });
+
+</script>
+
+
+</body>
+
+</html>
+
+{% endblock %}

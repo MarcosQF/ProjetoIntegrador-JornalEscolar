@@ -84,8 +84,9 @@
   transition: all 0.3s ease;
 }
 .sidebar .nav-links li.showMenu i.arrow {
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
 }
+
 .sidebar.close .nav-links i.arrow {
   display: none;
 }
