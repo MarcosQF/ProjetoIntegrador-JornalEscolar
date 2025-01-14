@@ -49,17 +49,12 @@
           </ul>
         </li>
         <li>
-          <div class="iocn-link">
-            <a href="#">
-              <i class='bx bx-chat'></i>
-              <span class="link_name">Comentários</span>
-            </a>
-            <i class='bx bxs-chevron-down arrow' ></i>
-          </div>
-          <ul class="sub-menu">
-            <li><a class="link_name" href="#">Comentários</a></li>
-            <li><a href="#">Todos</a></li>
-            <li><a href="#">Denunciados</a></li>
+          <a href="{% url 'comments-path' %}">
+            <i class='bx bx-chat' style='color:#ffffff'></i>
+            <span class="link_name">Denúncias</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Denúncias</a></li>
           </ul>
         </li>
         <li>
