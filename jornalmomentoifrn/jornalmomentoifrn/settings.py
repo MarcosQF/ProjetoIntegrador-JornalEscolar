@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'apps.adminhub',
     'apps.paginas',
+
     'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -119,9 +122,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS  = [
-    os.path.join(BASE_DIR, 'static')
+    BASE_DIR / 'static'
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles" 
 # Default primary key field type
@@ -129,4 +132,28 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CKEDITOR_BASEPATH = "/staticfiles/ckeditor/ckeditor/"
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['Image'], 
+            ['Font', 'FontSize', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ],
+        'font_names': 'Arial/Arial, Helvetica, sans-serif; Times New Roman/Times New Roman, Times, serif; Courier New/Courier New, Courier, monospace; Verdana/Verdana, Geneva, sans-serif;',
+        'fontSize_sizes': '8/8px; 10/10px; 12/12px; 14/14px; 18/18px; 24/24px; 36/36px',  # Tamanhos de fonte
+        'width': '185vh',
+        'height':'100vh',
+        'filebrowserImageUploadUrl': '/ckeditor/upload/',
+        'filebrowserBrowseUrl': '/ckeditor/browse/',
+        'resize_enabled': True,
+    }
+}   
+
+MEDIA_URL = '/media/'  # URL para acessar os arquivos de mídia
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Caminho físico para os arquivos de mídia
+
+CKEDITOR_UPLOAD_PATH = "uploads/"  # 
