@@ -1,0 +1,51 @@
+{% extends 'admhub/base_admhub.html' %}
+{%load static%}
+{% block title %}Criar Notícias{% endblock %}
+
+{% block css %}  
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/forms_style.css' %}">
+{% endblock %}
+
+{% block profile_image %}{% static 'images/mulher_perfil.jpeg' %}{% endblock %}
+
+{% block content %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Post</title>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    
+</head>
+<body>
+
+    <h2>Criar Novo Post</h2>
+
+    {% if success_message %}
+        <div style="color: green; font-weight: bold;">
+            {{ success_message }}
+        </div>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.media }}
+        
+        <!-- Formulário Título e Categoria -->
+        <div class="form">
+            <span class="title-field">Título:</span>
+            <span >{{ form.title }}</span>
+            <span class="category-field">{{ form.category }}</span>
+            <button class="public-button" type="submit">Publicar</button>
+        </div>
+    
+        <!-- Formulário Conteúdo -->
+        <div class="form">
+            <h4>Conteúdo:</h4>
+            <span class="content-field">{{ form.content }}</span>
+        </div>
+    </form>
+    
+</body>
+</html>
+{% endblock %}
