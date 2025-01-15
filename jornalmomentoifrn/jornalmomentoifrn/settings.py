@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'apps.adminhub',
     'apps.paginas',
+    'apps.login',
 
     'ckeditor',
     'ckeditor_uploader',
