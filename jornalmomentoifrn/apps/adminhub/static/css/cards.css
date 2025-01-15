@@ -1,0 +1,48 @@
+   /* Container para os inputs lado a lado */
+   .inputs-container {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os inputs */
+  }
+
+  .input-imagem {
+    width: 200px;
+    height: 200px;
+    background-color: #f0f0f0;
+    background-image: url('https://via.placeholder.com/150.png?text=Selecione+uma+imagem');
+    background-size: cover;
+    background-position: center;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .input-imagem input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .input-imagem span {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Ícone de imagem sobre o fundo */
+  .input-imagem::before {
+    content: '\f03e';  /* Ícone de imagem do Font Awesome */
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; /* Ícones em negrito */
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
