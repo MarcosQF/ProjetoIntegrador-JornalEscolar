@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios" />
+    <link rel="stylesheet" href= {% static "css/login.css" %}>
+    <title>Login - Momento IFRN</title>
+</head>
+
+
+<body>
+
+    <header>
+        <a href="#" class="arrowBack">
+            <span class="material-symbols-outlined">
+                arrow_back_ios
+            </span>
+        </a>
+    </header>
+
+    <main>
+
+        <img src="assets/Journalist-cuate 1.png" alt="Jornalista filmando reportagem com seu camera man">
+
+        <div class="conteudoForm">
+            <img src="assets/logoMomentoIfrn.png" alt="Logo MomentoIFRN">
+            <div class="tituloForm">
+                <h1>Login</h1>
+                <p>Preencha os campos para entrar na sua conta</p>
+            </div>
+            <form class="login">
+                <input type="text" placeholder="Nome de usuário" name="username">
+                <input type="password" placeholder="Senha" name="password">
+            </form>
+
+            <hr>
+
+            <button>
+                Entrar
+            </button>
+
+            <p class="labelCadastro">Não possui cadastro? <a href="#">Clique aqui</a></p>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

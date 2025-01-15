@@ -1,0 +1,74 @@
+body {
+    font-family: Epilogue, sans-serif;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.logo{
+    max-width: 85px;
+    max-height: 95px;
+    width: auto;
+    height: auto;
+}
+
+.tituloForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+.tituloForm h1,
+p {
+    margin: 0;
+}
+
+.conteudoForm {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+form input {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 420px;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: Epilogue, sans-serif;
+    font-style: italic;
+}
+
+hr {
+    width: 325px;
+    color: #9C9C9C;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 230px;
+    padding: 25px;
+    font-family: Epilogue, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
