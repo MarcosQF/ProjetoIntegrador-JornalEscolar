@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,13 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@350&icon_names=home,play_arrow"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="mentes.css">
+    <link rel="stylesheet" href="{% static "css/mentes.css" %}">
     <title>Momento IFRN - Mentes Inspiradoras</title>
 </head>
 
 <body>
     <header>
-        <img src="assets/logo-momento.jpg" alt="logo do Momento IFRN">
+        <img src = "{% static "img/logo-momento.jpg" %}" alt="logo do Momento IFRN">
         <nav>
             <a href="#" class="home-link">
                 <span class="material-symbols-outlined">
@@ -33,7 +35,7 @@
         <div class="search-container">
             <input type="text" placeholder="Buscar">
             <button>
-                <img src="assets/iconePessoa.png" alt="Ícone de Perfil">
+                <img src = "{% static "img/iconePessoa.png" %}" alt="Ícone de Perfil">
                 Entrar
             </button>
         </div>
@@ -64,7 +66,7 @@
 
         <div class="episodes">
             <div class="episode">
-                <img src="assets/valdenice.png" alt="episodio 1 - Valdenice Freitas">
+                <img src = "{% static "img/valdenice.png" %}" alt="episodio 1 - Valdenice Freitas">
                 <h3>Ep 01 - Valdenice Freitas</h3>
                 <button>
                     <span class="material-symbols-outlined">
@@ -75,7 +77,7 @@
             </div>
 
             <div class="episode">
-                <img src="assets/amelia.png" alt="Episódio 2 - Amélia Reis">
+                <img src = "{% static "img/amelia.png" %}" alt="Episódio 2 - Amélia Reis">
                 <h3>Ep 02 - Amélia Reis</h3>
                 <button>
                     <span class="material-symbols-outlined">
@@ -86,7 +88,7 @@
             </div>
 
             <div class="episode">
-                <img src="assets/antonia.png" alt="Episódio 3 - Antônia Silva">
+                <img src = "{% static "img/antonia.png" %}" alt="Episódio 3 - Antônia Silva">
                 <h3>Ep 03 - Antônia Silva</h3>
                 <button>
                     <span class="material-symbols-outlined">
@@ -97,7 +99,7 @@
             </div>
 
             <div class="episode">
-                <img src="assets/ayla.png" alt="Episódio 4 - Ayla Márcia">
+                <img src = "{% static "img/ayla.png" %}" alt="Episódio 4 - Ayla Márcia">
                 <h3>Ep 04 - Ayla Márcia</h3>
                 <button>
                     <span class="material-symbols-outlined">
@@ -108,7 +110,7 @@
             </div>
 
             <div class="episode">
-                <img src="assets/aluisio.png" alt="Episódio 5 - Aluísio Rêgo">
+                <img src = "{% static "img/aluisio.png" %}" alt="Episódio 5 - Aluísio Rêgo">
                 <h3>Ep 05 - Aluísio Rêgo</h3>
                 <button>
                     <span class="material-symbols-outlined">
@@ -119,7 +121,7 @@
             </div>
 
             <div class="episode">
-                <img src="assets/lucas.png" alt="Episódio 6 - Lucas Schnaiderman">
+                <img src = "{% static "lucas.png" %}" alt="Episódio 6 - Lucas Schnaiderman">
                 <h3>Ep 06 - Lucas Schnaiderman</h3>
                 <button>
                     <span class="material-symbols-outlined">
