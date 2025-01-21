@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import LoginViews,CadastroViews
 
 urlpatterns = [
-    path('login/', views.login_view, name='login'),
-    path('signup/', views.signup_view, name='signup'),
+    path('login/', LoginViews.as_view(), name='login'),
+    path('signup/', CadastroViews.as_view(), name='signup'),
 ]
