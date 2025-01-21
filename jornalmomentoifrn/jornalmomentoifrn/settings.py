@@ -146,7 +146,7 @@ CKEDITOR_CONFIGS = {
         ],
         'font_names': 'Arial/Arial, Helvetica, sans-serif; Times New Roman/Times New Roman, Times, serif; Courier New/Courier New, Courier, monospace; Verdana/Verdana, Geneva, sans-serif;',
         'fontSize_sizes': '8/8px; 10/10px; 12/12px; 14/14px; 18/18px; 24/24px; 36/36px',  # Tamanhos de fonte
-        'width': '185vh',
+        'width': '170vh',
         'height':'100vh',
         'filebrowserImageUploadUrl': '/ckeditor/upload/',
         'filebrowserBrowseUrl': '/ckeditor/browse/',
