@@ -1,0 +1,104 @@
+body {
+    font-family: Epilogue, sans-serif;
+    width: 100%; margin: 0 auto;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+main {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    margin-bottom: 75px;
+    padding-left: 40px;
+    padding-top: 60px;
+}
+
+.arrowBack{
+    color: black;
+    text-decoration: none;
+}
+
+.arrow {
+    width: 35px;
+    height: 35px;
+}
+
+.conteudoForm {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 117px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.tituloForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloForm h1 {
+    font-size: 57px;
+    margin: 0;
+    padding: 0;
+}
+
+.tituloForm p {
+    margin: 0;
+    font-size: 21px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+input {
+    width: 520px;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: Epilogue, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+hr {
+    width: 400px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-family: Epilogue, sans-serif;
+    font-weight: bold;
+    font-size: 27px;
+    border: none;
+    border-radius: 50px;
+    width: 290px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.labelCadastro {
+    font-size: 20px;
+}
+
+.labelCadastro a {
+    color: #0FB6F3;
+}

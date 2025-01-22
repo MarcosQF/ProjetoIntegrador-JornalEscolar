@@ -1,0 +1,294 @@
+{% extends 'admhub/base_admhub.html' %}
+{%load static%}
+{% block title %}Página Inicial{% endblock %}
+
+{% block css %}  
+<link rel="stylesheet" href= {% static "css/checkbox.css" %} >
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+{% endblock %}
+
+{% block profile_image %}{% static 'images/mulher_perfil.jpeg' %}{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br" class="antialiased">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DataTables </title>
+	<meta name="description" content="(Formerly Tailwind Toolbox) ">
+	<meta name="keywords" content="">
+	<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+	<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href= {% static "css/tables_style.css" %} >
+  <link rel="stylesheet" href="btn.css" />
+</head>
+
+<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+
+
+	<!--Container-->
+	<div class="container w-full md:w-4.5/5 xl:w-/5/5  mx-auto px-2">
+
+		<!--Title-->
+		<h1 class="flex items-center font-inter font-medium break-normal text-black-500 px-2 py-8 text-3xl md:text-3xl">
+			Usuários
+		</h1>
+
+
+		<!--Card-->
+		<div id='recipients' class="p-8 mt-6 lg:mt-0 border-2 bg-white font-inter">
+
+
+			<table id="example" class="stripe hover cell-border font-inter" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+				<thead>
+					<tr>
+              <th class="font-inter font-medium "data-priority="1">Nome</th>
+              <th class="font-inter font-medium "data-priority="2">Nome de usuário</th>
+              <th class="font-inter font-medium "data-priority="3">email</th>
+              <th class="font-inter font-medium "data-priority="4">Permissão de Editor</th>
+			  <th class="font-inter font-medium "data-priority="5">Status</th>
+					</tr>
+				</thead>
+				<tbody>
+                  <tr>
+                       <td class="font-inter font-light " >João ASDAD</td>
+                       <td class="font-inter font-light ">Joazin123</td>
+                       <td class="font-inter font-light ">joaoP@gmail.com</td>
+                       <td>
+                        <div class="form-check form-switch">
+                           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        </div>
+                       </td>
+					   <td class="font-inter font-light ">Ativo</td>
+                  </tr>
+
+                  <tr>
+                    <td class="font-inter font-light ">João Pedro</td>
+                    <td class="font-inter font-light ">Joazin123</td>
+                    <td class="font-inter font-light ">joaoP@gmail.com</td>
+                    <td>
+                     <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                     </div>
+                    </td>
+				    <td class="font-inter font-light ">Ativo</td>
+               	  </tr>
+
+					 <tr>
+						<td class="font-inter font-light">João Pedro</td>
+						<td class="font-inter font-light">Joazin123</td>
+						<td class="font-inter font-light">joaoP@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Maria Souza</td>
+						<td class="font-inter font-light">MariaS2023</td>
+						<td class="font-inter font-light">mariaS@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Lucas Oliveira</td>
+						<td class="font-inter font-light">LucasO88</td>
+						<td class="font-inter font-light">lucasO@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+							</div>
+						</td>
+						<td class="font-inter font-light">Inativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Ana Costa</td>
+						<td class="font-inter font-light">AnaC123</td>
+						<td class="font-inter font-light">anaC@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault4">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Carlos Silva</td>
+						<td class="font-inter font-light">CarlosS01</td>
+						<td class="font-inter font-light">carlosS@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault5">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Juliana Martins</td>
+						<td class="font-inter font-light">JuM@rtins</td>
+						<td class="font-inter font-light">juli@martins.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault6">
+							</div>
+						</td>
+						<td class="font-inter font-light">Inativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Felipe Pereira</td>
+						<td class="font-inter font-light">FelipeP2024</td>
+						<td class="font-inter font-light">felipeP@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault7">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Ricardo Gomes</td>
+						<td class="font-inter font-light">RicardoG123</td>
+						<td class="font-inter font-light">ricardoG@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault8">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Beatriz Lima</td>
+						<td class="font-inter font-light">BeaLima99</td>
+						<td class="font-inter font-light">beatrizL@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault9">
+							</div>
+						</td>
+						<td class="font-inter font-light">Inativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Gabriel Rocha</td>
+						<td class="font-inter font-light">GabrielR01</td>
+						<td class="font-inter font-light">gabrielR@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault10">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Patrícia Souza</td>
+						<td class="font-inter font-light">PatriciaS123</td>
+						<td class="font-inter font-light">patriciaS@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault11">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Rafael Almeida</td>
+						<td class="font-inter font-light">RafaAlm@2010</td>
+						<td class="font-inter font-light">rafaelA@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault12">
+							</div>
+						</td>
+						<td class="font-inter font-light">Inativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Luana Ferreira</td>
+						<td class="font-inter font-light">LuanaF@123</td>
+						<td class="font-inter font-light">luanaF@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault13">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Thiago Martins</td>
+						<td class="font-inter font-light">ThiagoM456</td>
+						<td class="font-inter font-light">thiagoM@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault14">
+							</div>
+						</td>
+						<td class="font-inter font-light">Ativo</td>
+					</tr>
+					<tr>
+						<td class="font-inter font-light">Letícia Pires</td>
+						<td class="font-inter font-light">LeticiaP123</td>
+						<td class="font-inter font-light">leticiaP@gmail.com</td>
+						<td>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault15">
+							</div>
+						</td>
+						<td class="font-inter font-light">Inativo</td>
+					</tr>
+					
+
+
+				</tbody>
+			</table>
+		</div>
+		<!--/Card-->
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+	<!--Datatables -->
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			var table = $('#example').DataTable({
+				responsive: true
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'
+                }
+			})
+				.columns.adjust()
+				.responsive.recalc();
+		});
+	</script>
+
+<script>
+    $(document).ready(function () {
+        var table = $('#example').DataTable({
+            responsive: true,
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json'
+            }
+        })
+        .columns.adjust()
+        .responsive.recalc();
+    });
+
+</script>
+
+
+</body>
+
+</html>
+
+{% endblock %}

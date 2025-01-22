@@ -1,0 +1,102 @@
+{% extends "paginas/base_paginas.html" %}
+{% load static %}
+
+{% block title %}
+    Mentes Inspiradoras
+{% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="texto">
+            <div class='main-title'>
+                <div class="circulo-p"></div>
+                <div class="circulo-g"></div>
+                <h1>Mentes Inspiradoras</h1>
+                <div class="circulo-g"></div>
+                <div class="circulo-p"></div>
+            </div>
+            <p>Confira nosso papo com personagens incríveis do nosso Campus!</p>
+        </div>
+        <div class="filters">
+
+            <select>
+                <option>Data</option>
+            </select>
+            <select>
+                <option>Organizar por</option>
+            </select>
+            <button>Filtrar</button>
+            <input type="text" placeholder="Buscar episódio">
+        </div>
+
+        <div class="episodes">
+            <div class="episode">
+                <img src = "{% static "img/valdenice.png" %}" alt="episodio 1 - Valdenice Freitas">
+                <h3>Ep 01 - Valdenice Freitas</h3>
+                <button>
+                    <span class="material-symbols-outlined">
+                        <i class="ri-arrow-right-s-fill"></i>
+                    </span>
+                    Assistir
+                </button>
+            </div>
+
+            <div class="episode">
+                <img src = "{% static "img/amelia.png" %}" alt="Episódio 2 - Amélia Reis">
+                <h3>Ep 02 - Amélia Reis</h3>
+                <button>
+                    <span class="material-symbols-outlined">
+                        <i class="ri-arrow-right-s-fill"></i>
+                    </span>
+                    Assistir
+                </button>
+            </div>
+
+            <div class="episode">
+                <img src = "{% static "img/antonia.png" %}" alt="Episódio 3 - Antônia Silva">
+                <h3>Ep 03 - Antônia Silva</h3>
+                <button>
+                    <span class="material-symbols-outlined">
+                        <i class="ri-arrow-right-s-fill"></i>
+                    </span>
+                    Assistir
+                </button>
+            </div>
+
+            <div class="episode">
+                <img src = "{% static "img/ayla.png" %}" alt="Episódio 4 - Ayla Márcia">
+                <h3>Ep 04 - Ayla Márcia</h3>
+                <button>
+                    <span class="material-symbols-outlined">
+                        <i class="ri-arrow-right-s-fill"></i>
+                    </span>
+                    Assistir
+                </button>
+            </div>
+
+            <div class="episode">
+                <img src = "{% static "img/aluisio.png" %}" alt="Episódio 5 - Aluísio Rêgo">
+                <h3>Ep 05 - Aluísio Rêgo</h3>
+                <button>
+                    <span class="material-symbols-outlined">
+                        <i class="ri-arrow-right-s-fill"></i>
+                    </span>
+                    Assistir
+                </button>
+            </div>
+
+            <div class="episode">
+                <img src = "{% static "img/lucas.png" %}" alt="Episódio 6 - Lucas Schnaiderman">
+                <h3>Ep 06 - Lucas Schnaiderman</h3>
+                <button>
+                    <span class="material-symbols-outlined">
+                        <i class="ri-arrow-right-s-fill"></i>
+                    </span>
+                    Assistir
+                </button>
+            </div>
+        </div>
+    </main>
+{% endblock  %}
+

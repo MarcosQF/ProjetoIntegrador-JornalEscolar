@@ -1,0 +1,280 @@
+body {
+  font-family: Epilogue, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: #FFF;
+  box-shadow: 0px 2px 4px rgba(0 0 0 0.1);
+  gap: 90px;
+  margin-bottom: 70px
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid #4CAF50;
+  padding: 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  color: white;
+  background-color: #4CAF50;
+}
+
+.home-link {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 20
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-container input {
+  padding: 5px;
+  border: 1px solid #008000;
+  border-radius: 5px;
+}
+
+.search-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 45px;
+  width: 120px;
+  font-family: Epilogue, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 0 12px;
+  background-color: #3BB202;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.search-container button img {
+  height: 18px;
+  width: 18px;
+}
+
+.search-container button div {
+  width: 12px;
+  height: 12px;
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.texto {
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+  align-items: center;
+  padding: none;
+  margin-bottom: 55px;
+}
+
+.circulo-g {
+  background: #05CCEB;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.circulo-p {
+  background: #FECC00;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.main-title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.texto h1,
+p {
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 55px;
+}
+
+.filters select,
+.filters input,
+.filters button {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.filters select,
+.filters button,
+.filters input {
+  padding: 10px;
+  font-size: 22px;
+}
+
+.filters button {
+  background-color: white;
+  border: 1px solid #008000;
+  color: #008000;
+}
+
+
+
+.episodes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.episode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.episode img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.episode img {
+  width: 100%;
+  height: auto;
+}
+
+.episode h3 {
+  margin: 10px 0;
+}
+
+.play {
+  width: 20px;
+  height: 20px;
+}
+
+.episode button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  max-width: 105px;
+  max-height: 40px;
+  padding: 8px;
+  background-color: #FECC00;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font: bold 15px Epilogue, sans-serif;
+}
+
+
+
+footer {
+  background-color: #3BB202;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 55px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer h1 {
+  margin: 0;
+  font-size: 22px
+}
+
+.footer {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
+
+.logo-ifrn {
+  width: 115px;
+  height: 140px;
+  border: 1px solid;
+}
+
+.text-f {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+}
+
+.dados-f {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 12px;
+}
+
+.dados-f span {
+  font-weight: bold;
+}
+
+.icons-f {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-f {
+  width: 15px;
+  height: 15px;
+  border: 1px solid;
+}

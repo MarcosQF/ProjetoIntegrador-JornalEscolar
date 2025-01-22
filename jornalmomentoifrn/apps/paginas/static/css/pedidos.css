@@ -1,0 +1,91 @@
+.container_pedidos {
+  max-width: 1080px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+.container_pedidos h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.container_pedidos h2 {
+  font-size: 1.4rem;
+  color: #000000;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Texto */
+.container_pedidos p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Lista ordenada */
+.container_pedidos ol {
+  margin-left: 1.5rem;
+}
+
+.container_pedidos ol li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.container_pedidos ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Formulário */
+.form {
+  margin-top: 2rem;
+}
+
+.form label {
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.container_pedidos textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.container_pedidos button {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.container_pedidos button:hover {
+  background-color: #0e8712;
+  transition: 0.2s ease-in-out;
+}
