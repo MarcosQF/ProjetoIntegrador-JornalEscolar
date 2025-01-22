@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,7 +32,7 @@
         <img src = "{% static "img/Journalist-cuate-1.png" %}" alt="Jornalista filmando reportagem com seu camera man">
 
         <div class="conteudoForm">
-            <img src= "{% static "logoMomentoIfrn.png" %}" alt="Logo MomentoIFRN">
+            <img src= "{% static "img/logoMomentoIfrn.png" %}" alt="Logo MomentoIFRN">
             <div class="tituloForm">
                 <h1>Login</h1>
                 <p>Preencha os campos para entrar na sua conta</p>
@@ -43,11 +44,11 @@
 
             <hr>
 
-            <button>
-                Entrar
-            </button>
+            <a href="{% url 'logado' %}">
+                <button type="button" class="btn btn-primary">Entrar</button>
+            </a>
 
-            <p class="labelCadastro">Não possui cadastro? <a href="#">Clique aqui</a></p>
+            <p class="labelCadastro">Não possui cadastro? <a href= {% url "signup" %} > Clique aqui</a></p>
         </div>
 
     </main>

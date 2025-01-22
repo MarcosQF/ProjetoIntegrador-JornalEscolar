@@ -1,0 +1,50 @@
+{% extends "paginas/base_paginas.html" %}
+{% load static %}
+
+{% block title %}
+Pedidos
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href= {% static "css/pedidos.css" %}>
+{% endblock %}
+
+{% block content %}
+
+<div class="container_pedidos">
+  <h1>Política de Empréstimo de Equipamentos</h1>
+        <p>
+            Bem-vindo à página de Empréstimo de Equipamentos! Aqui, você pode solicitar o uso de equipamentos essenciais para a produção de conteúdo, como câmeras, tripés, microfones e outros itens importantes. Para garantir que todos tenham acesso aos equipamentos necessários e para preservar a qualidade e funcionamento dos materiais, solicitamos que siga atentamente as regras abaixo:
+        </p>
+        
+        <h2>Regras para Empréstimo de Equipamentos:</h2>
+        <ol>
+            <li>
+                <strong>Solicitação Antecipada:</strong>
+                <ul>
+                    <li>Faça a solicitação de empréstimo com pelo menos 24 horas de antecedência para garantir a disponibilidade do equipamento. Isso ajuda na organização e na alocação eficiente dos recursos.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Responsabilidade pelo Equipamento:</strong>
+                <ul>
+                    <li>Ao retirar um equipamento, você será o responsável pelo seu uso e conservação durante o período de empréstimo.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Relatar Danos ou Problemas:</strong>
+                <ul>
+                    <li>Caso você perceba qualquer dano ou defeito no equipamento durante o uso, informe imediatamente à equipe responsável.</li>
+                </ul>
+            </li>
+        </ol>
+
+        
+        <form action="#" method="post" class="form"> {% csrf_token %}
+            <label for="descricao">Descreva abaixo quais equipamentos deseja pegar emprestado</label>
+            <textarea id="descricao" name="descricao" rows="6" placeholder="Digite sua solicitação aqui..."></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+{% endblock %}

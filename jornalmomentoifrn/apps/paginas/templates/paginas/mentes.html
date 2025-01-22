@@ -1,45 +1,11 @@
+{% extends "paginas/base_paginas.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
+{% block title %}
+    Mentes Inspiradoras
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@350&icon_names=home,play_arrow"
-        rel="stylesheet" />
-
-    <link rel="stylesheet" href="{% static "css/mentes.css" %}">
-    <title>Momento IFRN - Mentes Inspiradoras</title>
-</head>
-
-<body>
-    <header>
-        <img src = "{% static "img/logo-momento.jpg" %}" alt="logo do Momento IFRN">
-        <nav>
-            <a href="#" class="home-link">
-                <span class="material-symbols-outlined">
-                    home
-                </span>
-                Início
-            </a>
-            <a href="#">Quem Somos</a>
-            <a href="#">Mentes Inspiradoras</a>
-        </nav>
-        <div class="search-container">
-            <input type="text" placeholder="Buscar">
-            <button>
-                <img src = "{% static "img/iconePessoa.png" %}" alt="Ícone de Perfil">
-                Entrar
-            </button>
-        </div>
-    </header>
+{% block content %}
 
     <main>
         <div class="texto">
@@ -70,7 +36,7 @@
                 <h3>Ep 01 - Valdenice Freitas</h3>
                 <button>
                     <span class="material-symbols-outlined">
-                        play_arrow
+                        <i class="ri-arrow-right-s-fill"></i>
                     </span>
                     Assistir
                 </button>
@@ -81,7 +47,7 @@
                 <h3>Ep 02 - Amélia Reis</h3>
                 <button>
                     <span class="material-symbols-outlined">
-                        play_arrow
+                        <i class="ri-arrow-right-s-fill"></i>
                     </span>
                     Assistir
                 </button>
@@ -92,7 +58,7 @@
                 <h3>Ep 03 - Antônia Silva</h3>
                 <button>
                     <span class="material-symbols-outlined">
-                        play_arrow
+                        <i class="ri-arrow-right-s-fill"></i>
                     </span>
                     Assistir
                 </button>
@@ -103,7 +69,7 @@
                 <h3>Ep 04 - Ayla Márcia</h3>
                 <button>
                     <span class="material-symbols-outlined">
-                        play_arrow
+                        <i class="ri-arrow-right-s-fill"></i>
                     </span>
                     Assistir
                 </button>
@@ -114,46 +80,23 @@
                 <h3>Ep 05 - Aluísio Rêgo</h3>
                 <button>
                     <span class="material-symbols-outlined">
-                        play_arrow
+                        <i class="ri-arrow-right-s-fill"></i>
                     </span>
                     Assistir
                 </button>
             </div>
 
             <div class="episode">
-                <img src = "{% static "lucas.png" %}" alt="Episódio 6 - Lucas Schnaiderman">
+                <img src = "{% static "img/lucas.png" %}" alt="Episódio 6 - Lucas Schnaiderman">
                 <h3>Ep 06 - Lucas Schnaiderman</h3>
                 <button>
                     <span class="material-symbols-outlined">
-                        play_arrow
+                        <i class="ri-arrow-right-s-fill"></i>
                     </span>
                     Assistir
                 </button>
             </div>
         </div>
     </main>
+{% endblock  %}
 
-    <footer>
-        <div class="footer">
-            <div class="logo-ifrn"></div>
-            <div class="text-f">
-                <h1>Instituto Federal do Rio Grande do Norte - Campus Pau dos Ferros</h1>
-
-                <div class="dados-f">
-                    <p><span>Endereço:</span> BR 405, Km 154, S/N, Bairro Chico Cajá - 59900-000</p>
-                    <p><span>E-mail:</span> comunicacao.pf@ifrn.edu.br</p>
-                    <p> <span>Telefone:</span> (84) 4005-4109</p>
-                </div>
-
-                <div class="icons-f">
-                    <div class="icon-f"></div>
-                    <div class="icon-f"></div>
-                    <div class="icon-f"></div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>

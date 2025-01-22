@@ -1,0 +1,53 @@
+{% extends "paginas/modelo.html" %}
+{% load static %}
+
+{% block entrar %}
+
+<div class="profile">
+  <div class="img_profile">
+    <img src="{% static 'img/img_logado/JoãoMarcos.png' %}" alt="Imagem doPerfil" class="profile-image">
+  </div>
+  <h3>João Marcos</h3>
+  <div class="menu_profile">
+    <ul>
+      <li>
+        <a href="{% url "perfil" %}">Dados Pessoais</a>
+      </li>
+      <li>
+        <a href="{% url "initial-dashboard-path" %}">Painel administrativo</a>
+      </li>
+      <hr cla>
+      <li>
+        <a href="{% url "modelo" %}"><i class="ri-logout-box-line"></i>Sair</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  let profile = document.querySelector('.profile');
+  let menu_profile = document.querySelector('.menu_profile');
+
+  profile.onclick = function() {
+    menu_profile.classList.toggle('active');
+    console.log('teste');
+  }
+</script>
+  <!-- <div class="profile-container" onclick="toggleDropdown()">
+    
+    <img src="{% static 'img/img_logado/  JoãoMarcos.png' %}" alt="Imagem do Perfil"    class="profile-image">
+    <span class="user-name">João Marcos <span   class="dropdown-arrow">v</span></span>
+    
+    <div class="dropdown-menu" id="dropdownMenu">
+      <ul>
+        <li><a href="#">Dados pessoais</a></li>
+        <li><a href="#">Painel administrativo</a></li>
+        <hr>
+        <li class="logout">
+          <span class="logout-icon"></span>
+          <a href="#">Sair</a>
+        </li>
+      </ul>
+    </div>
+  </div>  -->
+{% endblock entrar %}

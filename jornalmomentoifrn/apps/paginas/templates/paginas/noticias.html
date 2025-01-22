@@ -1,0 +1,205 @@
+{% extends "paginas/base_paginas.html" %}
+{% load static %}
+
+{% block title %}
+Notícias
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href= {% static "css/noticias.css" %} >
+{% endblock %}
+
+{% block content %}
+
+ <div class="container">
+    <h1>Cras nulla eros, bibendum id nibh eu, ornare aliquet ante, sunt di la pro.</h1>
+    <div class="image-container">
+      <img src= {% static "img/img_noticias/noticia_tuma.png" %} alt="Classroom">
+    </div>
+    <p>
+      Nulla vel suscipit ex, eget cursus tortor. Nullam in aliquam turpis. Curabitur eget nisi varius, suscipit mi et, vulputate turpis. Aliquam vel aliquet ipsum. Etiam mi arcu, ultricies ac lorem in, molestie tincidunt felis. Donec tempor mollis justo eget bibendum. Nullam sit amet nisl fringilla, pharetra magna in, placerat eros. Vestibulum arcu erat, faucibus id tincidunt vitae, mattis nec tortor. Vivamus non volutpat risus, quis cursus turpis. Etiam porta urna vel eros vulputate, sed eleifend tellus elementum. Cras egestas ullamcorper libero eu porta. Sed fermentum placerat auctor.
+    </p>
+    <h2>Aenean congue blandit nibh ut ultricies.</h2>
+    <p>
+      Nulla vel suscipit ex, eget cursus tortor. Nullam in aliquam turpis. Curabitur eget nisi varius, suscipit mi et, vulputate turpis. Aliquam vel aliquet ipsum. Etiam mi arcu, ultricies ac lorem in, molestie tincidunt felis. Donec tempor mollis justo eget bibendum. Nullam sit amet nisl fringilla, pharetra magna in, placerat eros. Vestibulum arcu erat, faucibus id tincidunt vitae, mattis nec tortor. Vivamus non volutpat risus, quis cursus turpis. Etiam porta urna vel eros vulputate, sed eleifend tellus elementum. Cras egestas ullamcorper libero eu porta. Sed fermentum placerat auctor.
+    </p>
+    <div class="comments-section">
+      <h3>COMENTÁRIOS (5)</h3>
+      <div class="comment">
+        <div class="avatar">
+          <img src= {% static "img/img_noticias/maria_perfil.png" %} alt="Maria Júlia">
+        </div>
+        <div class="comment-content">
+          <p class="comment-author">Maria Júlia <span><i class="ri-book-open-line"></i></span></p>
+          <p class="comment-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend congue diam, mollis vestibulum ante ultrices in. <strong>Quisque eros lectus</strong>, placerat id rhoncus a, sodales a purus. Phasellus hendrerit feugiat dignissim. Integer suscipit gravida nulla id fermentum. Curabitur congue faucibus pellentesque. Suspendisse non iaculis neque.
+          </p>
+          <div class="comment-actions">
+            <span><i class="ri-thumb-up-line"></i> 50</span>
+            <span><i class="ri-thumb-down-line"></i> 5</span>
+            <a href="#">Responder</a>
+            <a href="#" type="link" class="link" data-toggle="modal" data-target="#exampleModal"><i class="ri-equalizer-line"></i></a>
+            <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Denúncia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Motivo 1
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Motivo 2
+  </label>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+        <button type="button" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div><div class="comments-section">
+     
+      
+      <!-- Comentário principal -->
+      <div class="comment">
+        <div class="avatar">
+          <img src={% static "img/img_noticias/maria_perfil.png" %} alt="Maria Júlia">
+        </div>
+        <div class="comment-content">
+          <p class="comment-author">Maria Júlia <span><i class="ri-book-open-line"></i></span></p>
+          <p class="comment-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend congue diam, mollis vestibulum ante ultricies in. <strong>Quisque eros lectus</strong>, placerat id rhoncus a, sodales a purus.
+          </p>
+          <div class="comment-actions">
+            <span><i class="ri-thumb-up-line"></i> 50</span>
+            <span><i class="ri-thumb-down-line"></i> 50</span>
+            <a href="#">Responder</a>
+            <a href=""><i class="ri-equalizer-line"></i></a>  
+          </div>
+          <div class="responses">
+            <p class="view-responses"><i class="ri-arrow-down-s-line"></i> Ver 3 respostas</p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Resposta ao comentário -->
+      {% comment %} <div class="comment reply">
+        <div class="avatar">
+          <img src= {% static "img/img_noticias/fulaninha.png" %} alt="FULANINHA_01">
+        </div>
+        <div class="comment-content">
+          <p class="comment-author">FULANINHA_01 <span>🌿</span></p>
+          <p class="comment-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend congue diam, mollis vestibulum ante ultricies in.
+          </p>
+          <div class="comment-actions">
+            <span>👍 50</span>
+            <span>👎 50</span>
+            <a href="#">Responder</a>
+            <a href=""><i class="ri-equalizer-line"></i></a>
+          </div>
+        </div>
+      </div> {% endcomment %}
+
+      <!-- Outro comentário principal -->
+      <div class="comment">
+        <div class="avatar">
+          <img src= {% static "img/img_noticias/fulaninha.png" %} alt="FULANINHA_04">
+        </div>
+        <div class="comment-content">
+          <p class="comment-author">FULANINHA_04</p>
+          <p class="comment-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend congue diam, mollis vestibulum ante ultricies in.
+          </p>
+          <div class="comment-actions">
+            <span><i class="ri-thumb-up-line"></i> 50</span>
+            <span><i class="ri-thumb-down-line"></i> 50</span>
+            <a href="#">Responder</a>
+            <a href=""><i class="ri-equalizer-line"></i></a>
+          </div>
+          <div class="responses">
+            <!-- Respostas aninhadas -->
+            <div class="comment reply">
+              <div class="avatar">
+                <img src={% static "img/img_noticias/fulaninho.png" %} alt="FULANINHO">
+              </div>
+              <div class="comment-content">
+                <p class="comment-author">FULANINHO</p>
+                <p class="comment-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend congue diam.
+                </p>
+                <div class="comment-actions">
+                  <span><i class="ri-thumb-up-line"></i> 50</span>
+                  <span><i class="ri-thumb-down-line"></i> 50</span>
+                  <a href="#">Responder</a>
+                  <a href=""><i class="ri-equalizer-line"></i></a>  
+                </div>
+              </div>
+            </div>
+            <div class="comment reply">
+              <div class="avatar">
+                <img src= {% static "img/img_noticias/fulaninho.png" %} alt="FULANINHO">
+              </div>
+              <div class="comment-content">
+                <p class="comment-author">FULANINHO</p>
+                <p class="comment-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend congue diam.
+                </p>
+                <div class="comment-actions">
+                  <span><i class="ri-thumb-up-line"></i> 50</span>
+                  <span><i class="ri-thumb-down-line"></i> 50</span>
+                  <a href="#">Responder</a>
+                  <a href=""><i class="ri-equalizer-line"></i></a>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <h2>Matérias Relacionadas</h2>
+    <div class="related-posts">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src= {% static "img/img_noticias/image1.png" %} alt="Instituto Federal">
+        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src= {% static "img/img_noticias/image2.png" %} alt="Graduação em Agroindústria">
+        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src= {% static "img/img_noticias/image3.png" %} alt="Campus Instituto">
+        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src= {% static "img/img_noticias/image4.png" %} alt="Formatura Cursos Técnicos">
+        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
+      </div>
+    </div>
+  </div>
+  
+{% endblock  %}
