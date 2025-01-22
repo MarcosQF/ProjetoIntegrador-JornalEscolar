@@ -417,6 +417,12 @@ main .texto p {
   text-align: center;
 }
 
+.servicos a {
+  text-decoration: none;
+  color: var(--primary-color);
+
+}
+
 .servicos button {
   background-color: var(--footer-backgraund);
   border-radius: 1rem;
