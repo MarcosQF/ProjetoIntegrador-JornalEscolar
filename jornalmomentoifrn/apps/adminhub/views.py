@@ -1,9 +1,32 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,FormView
-from .forms import CreatePostForm
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView,FormView,ListView,CreateView,UpdateView,DeleteView
+from .forms import CreatePostForm,CategoriaForm
+from .models import *
 
-class InitialDashboardViews(TemplateView):
+class InitialDashboardViews(ListView):
   template_name = "adminhub/initial_dashboard.html"
+  model = Categorias
+  context_object_name = "categorias"
+
+# Views Categoria
+class CategoriaCreateView(CreateView):
+    model = Categorias
+    form_class = CategoriaForm
+    template_name = "adminhub/categoria_form.html"
+    success_url = reverse_lazy("initial-dashboard-path")
+
+class CategoriaUpdateView(UpdateView):
+    model = Categorias
+    form_class = CategoriaForm
+    template_name = "adminhub/categoria_form_update.html"
+    success_url = reverse_lazy("initial-dashboard-path")
+
+    
+class CategoriaDeleteView(DeleteView):
+    model = Categorias
+    template_name = 'adminhub/categoria_confirm_delete.html'
+    success_url = reverse_lazy('initial-dashboard-path')
 
 
 class UsersDashboardViews(TemplateView):

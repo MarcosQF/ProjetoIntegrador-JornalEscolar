@@ -1,5 +1,7 @@
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget  # Importação correta
+from .models import Categorias
+
 
 class CreatePostForm(forms.Form):
     title = forms.CharField(
@@ -30,3 +32,14 @@ class CreatePostForm(forms.Form):
         label='Conteúdo' 
     )
 
+
+class CategoriaForm(forms.ModelForm):
+    class Meta:
+        model = Categorias
+        fields = ['nome_categoria']
+        widgets = {
+            'nome_categoria': forms.TextInput(attrs={
+                'class': ' border-2 rounded-0',  
+                'placeholder': 'Digite o nome da categoria'  
+            }),
+        }
