@@ -8,3 +8,11 @@ class Artigo(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+
+class Categorias(models.Model):
+    nome_categoria = models.CharField(max_length=20,unique=True,blank=False) 
+
+    def __str__(self):
+        return self.nome_categoria
+    
