@@ -1266,7 +1266,3 @@ video {
     font-size: 40px;
     transition: transform 0.3s ease; /* Smooth transition for scaling */
   }
-
-  .custom-icon:hover {
-    transform: scale(1.5); /* Scales the icon on hover */
-  }

@@ -15,4 +15,9 @@ class Categorias(models.Model):
 
     def __str__(self):
         return self.nome_categoria
-    
+
+class Banners(models.Model):
+    image = models.ImageField(upload_to="uploads/")
+
+    def __str__(self):
+        return f"Image {self.id}"

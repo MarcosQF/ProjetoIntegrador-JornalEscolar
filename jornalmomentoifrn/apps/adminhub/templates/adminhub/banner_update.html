@@ -1,0 +1,5 @@
+<form method="post" action="{% url 'banner-edit' object.pk %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

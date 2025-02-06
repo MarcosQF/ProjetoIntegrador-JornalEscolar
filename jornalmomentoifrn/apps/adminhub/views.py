@@ -1,13 +1,24 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView,FormView,ListView,CreateView,UpdateView,DeleteView
-from .forms import CreatePostForm,CategoriaForm
+from .forms import CreatePostForm,CategoriaForm,ImageUploadForm
 from .models import *
 
 class InitialDashboardViews(ListView):
   template_name = "adminhub/initial_dashboard.html"
   model = Categorias
   context_object_name = "categorias"
+
+  def get_context_data(self, **kwargs):
+        # Obtém o contexto padrão
+      context = super().get_context_data(**kwargs)
+        
+        # Adiciona os dados dos dois modelos
+      context['images'] = Banners.objects.all()
+      context['categorias'] = Categorias.objects.all()
+        
+      return context
 
 # Views Categoria
 class CategoriaCreateView(CreateView):
@@ -21,8 +32,7 @@ class CategoriaUpdateView(UpdateView):
     form_class = CategoriaForm
     template_name = "adminhub/categoria_form_update.html"
     success_url = reverse_lazy("initial-dashboard-path")
-
-    
+ 
 class CategoriaDeleteView(DeleteView):
     model = Categorias
     template_name = 'adminhub/categoria_confirm_delete.html'
@@ -58,3 +68,20 @@ class CreatePostViews(FormView):
     def form_invalid(self, form):
         # Se o formulário for inválido, você pode exibir erros na tela
         return super().form_invalid(form)
+    
+class BannerUploadView(CreateView):
+    model = Banners
+    form_class = ImageUploadForm
+    template_name = 'adminhub/banner_upload.html'
+    success_url = reverse_lazy('initial-dashboard-path')
+
+class BannerUpdateView(UpdateView):
+    model = Banners
+    form_class = ImageUploadForm
+    template_name = "adminhub/banner_update.html"
+    success_url = reverse_lazy("initial-dashboard-path")
+ 
+class BannerDeleteView(DeleteView):
+    model = Banners
+    template_name = 'adminhub/banner_delete.html'
+    success_url = reverse_lazy('initial-dashboard-path')
