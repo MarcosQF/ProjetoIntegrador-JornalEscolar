@@ -1,6 +1,6 @@
 from django import forms
 from ckeditor_uploader.widgets import CKEditorUploadingWidget  # Importação correta
-from .models import Categorias
+from .models import Categorias,Banners
 
 
 class CreatePostForm(forms.Form):
@@ -43,3 +43,8 @@ class CategoriaForm(forms.ModelForm):
                 'placeholder': 'Digite o nome da categoria'  
             }),
         }
+
+class ImageUploadForm(forms.ModelForm):
+    class Meta:
+        model = Banners
+        fields = ['image']

@@ -1,4 +1,4 @@
-from django.urls import path,include
+from django.urls import path
 from .views import *
 
 urlpatterns = [
@@ -10,5 +10,8 @@ urlpatterns = [
     path('categorias/criar', CategoriaCreateView.as_view(), name='categoria-create'),
     path('categorias/editar/<int:pk>', CategoriaUpdateView.as_view(), name='categoria-edit'),
     path('categorias/deletar/<int:pk>/', CategoriaDeleteView.as_view(), name='categoria-delete'),
+    path('banners/criar', BannerUploadView.as_view(), name='banner-create'),
+    path('banners/editar/<int:pk>', BannerUpdateView.as_view(), name='banner-edit'),
+    path('banners/deletar/<int:pk>/', BannerDeleteView.as_view(), name='banner-delete'),
     
 ]
