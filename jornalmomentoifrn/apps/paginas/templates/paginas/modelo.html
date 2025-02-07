@@ -8,15 +8,15 @@
       <div class='main-title'>
           <div class="circulo-p"></div>
           <div class="circulo-g"></div>
-          <h1>Mentes Inspiradoras</h1>
+          <h1>Principais Noticias</h1>
           <div class="circulo-g"></div>
           <div class="circulo-p"></div>
       </div>
-      <p>Confira nosso papo com personagens incríveis do nosso Campus!</p>
+      <p>Confira os assuntos mais falados no Campus!</p>
     </div>
     
   <!-- Carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -64,8 +64,8 @@
         </div>
 
         <a href= {% url "noticias" %}>
-          <div class="notocia_id">
-            <div>
+          <div class="noticia_id">
+            <div class="img_noticia">
               <img src= {% static "img/IMG_2768.png" %}  alt="">
             </div>  
             <div class="noticia_id_esquerda">
@@ -75,9 +75,9 @@
             </div>
           </div>
         </a>
-
-        <div class="notocia_id">
-          <div>
+       
+        <div class="noticia_id">
+          <div class="img_noticia">
             <img src= {% static "img/IMG_2768.png" %}  alt="">
           </div>  
           <div class="noticia_id_esquerda">
@@ -86,7 +86,7 @@
             <span class>Há 2 horas</span>
           </div>
         </div>
-        {% comment %} <div class="notocia_id">
+        {% comment %} <div class="noticia_id">
           <img src=  {% static "img/IMG_2768.png" %} alt="">
           <div class="noticia_id_esquerda">
             <p class="type">Eventos</p>
@@ -95,8 +95,8 @@
           </div>
         </div> {% endcomment %}
 
-        <div class="notocia_id">
-          <div>
+        <div class="noticia_id">
+          <div class="img_noticia" >
             <img src= {% static "img/IMG_2768.png" %} alt="">
           </div>  
           <div class="noticia_id_esquerda">
