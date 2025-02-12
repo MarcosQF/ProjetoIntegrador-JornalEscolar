@@ -1,36 +1,24 @@
 from django import forms
-from ckeditor_uploader.widgets import CKEditorUploadingWidget  # Importação correta
-from .models import Categorias,Banners
+from ckeditor_uploader.widgets import CKEditorUploadingWidget  
+from .models import *
 
-
-class CreatePostForm(forms.Form):
+class CreatePostForm(forms.ModelForm):     
     title = forms.CharField(
-        max_length=255, 
-        widget=forms.TextInput(attrs={'placeholder': 'Escreva aqui o título '}),
-        label='Título' 
-    )
-
-    CATEGORY_CHOICES = [
-        ('', 'Categoria'),  # Opção default
-        ('politica', 'Política'),
-        ('economia', 'Economia'),
-        ('saude', 'Saúde'),
-        ('educacao', 'Educação'),
-        ('tecnologia', 'Tecnologia'),
-        ('entretenimento', 'Entretenimento')
-    ]
-        
-    category = forms.ChoiceField(
-        choices=CATEGORY_CHOICES,
-        label='Categoria',
-        widget=forms.Select(),
-        required=True
+        widget=forms.TextInput(attrs={'placeholder': 'Escreva aqui o título'}),
+        label="Título",
     )
 
     content = forms.CharField(
-        widget=CKEditorUploadingWidget(),  # Usando o widget correto para upload de arquivos
-        label='Conteúdo' 
+        widget=CKEditorUploadingWidget(),
+        label="Conteúdo",
     )
+
+    category = forms.ModelChoiceField(queryset=Categorias.objects.all(), empty_label="Selecione uma categoria")
+    
+    class Meta:
+        model = Noticias
+        fields = ['title', 'content', 'category']
+
 
 
 class CategoriaForm(forms.ModelForm):

@@ -1,0 +1,6 @@
+<h6>Tem certeza que deseja deletar a noticia: <strong>{{ object.title }}</strong></h6> 
+<form method="post" action="{% url 'delete-noticia' object.pk%}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-danger">Deletar</button>
+</form>

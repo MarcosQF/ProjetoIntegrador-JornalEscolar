@@ -1,0 +1,43 @@
+.send-button{
+    border: none;
+    color: white;
+    background-color: #008000;
+    height: 40px;
+    width: auto;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 600;
+    
+}
+
+.send-button:hover{
+    transform: scale(1.03);
+}
+
+select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    height: 40px;
+    width: auto;
+    padding-left: 4px;
+    padding-right: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    color: #333;
+  }
+  
+  select:hover {
+    border-color: #008000;
+  }
+
+  .title-field{
+    font-size: 16px;
+  }
+
+  
+
