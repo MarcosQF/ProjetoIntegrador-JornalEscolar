@@ -1,0 +1,48 @@
+{% extends "paginas/base_paginas.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href= "{% static 'css/edit-image.css' %}" >
+<div class="minha_conta">
+    <div class="voltar">
+        <a href="{% url 'index' %}"><i class="ri-arrow-left-s-line"></i></a>
+    </div>
+    <div class="container">
+        {% csrf_token %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="perfil">
+                <div class="img_perfil">
+                    {% if user.imagem_perfil %}
+                    <img src="{{ user.imagem_perfil.url }}" alt="Foto de perfil"/>
+                    {% else %}
+                    <img src="{% static 'imgs/user-default.jpg' %}" alt="Foto de perfil" class="profile-image"/>
+                    {% endif %}
+                    <div class="image-upload">
+                        <a href="#" onclick="document.getElementById('file-input').click();">
+                            <i class="ri-edit-box-line icone-edit-profile"></i>
+                        </a>
+                        <input type="file" id="file-input" style="display: none;" name="imagem_perfil"/>
+                    </div>
+                </div>
+                <h3>{{ user.nome_usuario }}</h3>
+            </div>
+
+            <!-- Outros campos do formulário -->
+            <div class="email_perfil">
+                <h3>Email: </h3>
+                {{ form.email }}
+            </div>
+            <div class="email_perfil">
+                <h3>Nome: </h3>
+                {{ form.nome_usuario }}
+            </div>
+
+            <button type="submit">Atualizar</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

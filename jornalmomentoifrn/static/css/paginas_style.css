@@ -719,18 +719,6 @@ footer .img_footer {
 
 /* ___PERFIL___ */
 
-.minha_conta {
-  max-width: var(--max-width);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  height: 100vh;
-}
-
 .minha_conta .voltar {
   display: flex;
   justify-content: left;
@@ -759,36 +747,16 @@ footer .img_footer {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-
 }
 
 .perfil .img_perfil a {
   display: flex;
-  justify-content: right;
-  align-items: center;
-  gap: 0.6rem;
   position: relative;
-  text-decoration: none;
-  top: 3rem;
-
-}
-
-.perfil .img_perfil i {
-  background-color: gray;
-  width: 3rem;
-  height: 3rem;
-  text-align: center;
-  justify-content: center;
-  border-radius: 50%;
-  padding: 0.3rem;
-  font-size: 1.5rem;
-  color: white;
-  cursor: pointer;
-  opacity: 0.8;
 }
 
 .perfil .img_perfil img {
-  width: 20rem;
+  height: 400px;
+  width: 400px;
   border-radius: 50%;
   object-fit: cover;
 }

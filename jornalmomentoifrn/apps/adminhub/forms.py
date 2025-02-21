@@ -20,7 +20,6 @@ class CreatePostForm(forms.ModelForm):
         fields = ['title', 'content', 'category']
 
 
-
 class CategoriaForm(forms.ModelForm):
     class Meta:
         model = Categorias

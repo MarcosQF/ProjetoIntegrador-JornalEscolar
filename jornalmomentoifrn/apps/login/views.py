@@ -1,5 +1,5 @@
 from django.contrib.auth.views import LogoutView, LoginView
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView, TemplateView
 from django.urls import reverse_lazy
 from .forms import *
 
@@ -16,3 +16,12 @@ class CadastroView(CreateView):
     template_name = 'login/cadastro.html'
     success_url = reverse_lazy('login')
 
+
+class CustomUserUpdateView(UpdateView):
+    model = CustomUser
+    form_class = ProfileForm
+    template_name = 'login/perfil.html'
+    success_url = reverse_lazy('index')
+
+    def get_object(self, queryset=None):
+        return self.request.user

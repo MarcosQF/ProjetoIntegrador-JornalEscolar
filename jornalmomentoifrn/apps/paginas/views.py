@@ -23,5 +23,3 @@ class PedidosViews(TemplateView):
 class BaseViews(TemplateView):
   template_name = "paginas/base_paginas.html"
   
-class PerfilViews(TemplateView):
-  template_name = "paginas/perfil.html"

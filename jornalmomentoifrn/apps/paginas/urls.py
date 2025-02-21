@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import IndexViews, ModeloViews, MentesViews, NoticiasViews, LogadoViews, PedidosViews, BaseViews, PerfilViews
+from .views import IndexViews, ModeloViews, MentesViews, NoticiasViews, LogadoViews, PedidosViews, BaseViews
 
 urlpatterns = [
     path('', IndexViews.as_view(), name="index"),
@@ -9,7 +9,5 @@ urlpatterns = [
     path('noticias/', NoticiasViews.as_view(), name="noticias"),
     path('logado/', LogadoViews.as_view(), name="logado"),
     path('pedidos/', PedidosViews.as_view(), name="pedidos"),
-    path('perfil/', PerfilViews.as_view(), name="perfil"),
-    
 ]
 
