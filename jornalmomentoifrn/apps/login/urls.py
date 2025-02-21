@@ -5,4 +5,5 @@ urlpatterns = [
     path('', CustomLoginView.as_view(), name='login'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
     path('cadastro/', CadastroView.as_view(), name='signup'),
+    path('perfil/<int:pk>', CustomUserUpdateView.as_view(), name='perfil-update'),
 ]

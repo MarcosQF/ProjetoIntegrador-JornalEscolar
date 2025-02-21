@@ -1,0 +1,40 @@
+.img_perfil {
+  position: relative; /* Necessário para o posicionamento absoluto do ícone */
+  display: inline-block; /* Ajusta o tamanho da div à imagem */
+}
+
+.icone-edit-profile {
+
+  position: absolute; /* Posiciona o ícone de forma absoluta dentro da imagem */
+  top: -320px; /* Distância do topo */
+  right: -10px; /* Distância da borda direita */
+  background-color: gray; /* Fundo cinza */
+  color: white; /* Cor do ícone branco */
+  border-radius: 50%; /* Torna o fundo redondo */
+  padding: 3px;
+  font-size: 30px; /* Tamanho do ícone */
+  cursor: pointer; /* Adiciona o cursor de "pointer" para interação */
+  width: 50px;
+  height: 50px;/* Tamanho do ícone */
+}
+
+button[type="submit"] {
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  padding: 12px 24px; /* Espaçamento interno (altura e largura) */
+  border: none; /* Remove a borda padrão */
+  border-radius: 8px; /* Borda arredondada */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s, transform 0.3s; /* Efeito de transição para a cor e o movimento */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Cor de fundo quando o mouse está sobre o botão */
+  transform: scale(1.05); /* Leve aumento do botão quando hover */
+}
+
+button[type="submit"]:active {
+  background-color: #388e3c; /* Cor do fundo quando o botão é pressionado */
+  transform: scale(1); /* Volta ao tamanho original quando pressionado */
+}
