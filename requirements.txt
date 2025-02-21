@@ -4,3 +4,4 @@ django-ckeditor==6.7.2
 django-js-asset==3.0.1
 pillow==11.1.0
 sqlparse==0.5.2
+typing_extensions==4.12.2

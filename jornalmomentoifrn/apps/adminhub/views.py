@@ -1,5 +1,4 @@
-from django.http import JsonResponse
-from django.shortcuts import render
+
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView,ListView,CreateView,UpdateView,DeleteView
 from .forms import CreatePostForm,CategoriaForm,ImageUploadForm

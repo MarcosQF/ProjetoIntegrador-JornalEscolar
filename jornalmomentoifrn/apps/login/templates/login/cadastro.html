@@ -8,52 +8,86 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"  href= {% static "css/cadastro.css" %}>
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/cadastro-login.css' %}">
     <title>Cadastro - MomentoIFRN</title>
 </head>
 
 <body>
 
-    <header>
-        <div class="arrow"></div>
-    </header>
+<header>
+    <div class="arrow"></div>
+</header>
 
-    <main>
-        <img src="{% static "img/videographer.png" %}" alt="Ilustração de um cinegrafista">
+<main>
+    <img class="img-login-cadastro" src="{% static 'img/videographer.png' %}" alt="Ilustração de um cinegrafista">
 
-        <div class="conteudoForm">
+    <div class="conteudoForm">
 
-            <img src="{% static "img/logoMomentoIfrn.png" %}" alt="Logo do MomentoIFRN" class=".logo">
+        <img  src="{% static 'img/logoMomentoIfrn.png' %}" alt="Logo do MomentoIFRN" class="logo">
 
-            <div class="tituloForm">
-                <h1>Cadastro</h1>
-                <p>Preencha os campos para completar o seu cadastro</p>
-            </div>
 
-            <form>
-
-                <input type="text" placeholder="Nome" name="nome">
-
-                <input type="text" placeholder="Email" name="email">
-
-                <input type="text" placeholder="Nome de usuário" name="username">
-
-                <input type="password" placeholder="Senha" name="password">
-
-                <input type="password" placeholder="Confirme a senha" name="confirmPassword">
-
-            </form>
-
-            <hr>
-
-            <button>Cadastrar</button>
-
-            <p>Já tem cadastro? <a href= {% url "login" %} >Clique aqui</a></p>
-
+        <div class="tituloForm">
+            <h1>Cadastro</h1>
+            <p>Preencha os campos para completar o seu cadastro</p>
         </div>
-        </div>
-    </main>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Campo Nome -->
+            <label for="{{ form.nome_usuario.id_for_label }}">Nome de Usuário</label>
+            {{ form.nome_usuario }}  <!-- Renderiza o campo nome_usuario -->
+            {% if form.nome_usuario.errors %}
+                <div class="error">
+                    {% for error in form.nome_usuario.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- Campo E-mail -->
+            <label for="{{ form.email.id_for_label }}">E-mail</label>
+            {{ form.email }}  <!-- Renderiza o campo email -->
+            {% if form.email.errors %}
+                <div class="error">
+                    {% for error in form.email.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- Campo Senha -->
+            <label for="{{ form.password1.id_for_label }}">Senha</label>
+            {{ form.password1 }}  <!-- Renderiza o campo senha -->
+            {% if form.password1.errors %}
+                <div class="error">
+                    {% for error in form.password1.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- Campo Confirmar Senha -->
+            <label for="{{ form.password2.id_for_label }}">Confirmar Senha</label>
+            {{ form.password2 }}  <!-- Renderiza o campo confirmar senha -->
+            {% if form.password2.errors %}
+                <div class="error">
+                    {% for error in form.password2.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <!-- Botão de Submissão -->
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <hr>
+
+        <p>Já tem cadastro? <a href="{% url 'login' %}" >Clique aqui</a></p>
+
+    </div>
+</main>
 
 </body>
 
