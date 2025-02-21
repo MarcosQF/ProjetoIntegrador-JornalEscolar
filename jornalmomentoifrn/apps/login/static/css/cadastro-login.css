@@ -1,0 +1,154 @@
+body {
+    font-family: 'Epilogue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    gap: 50px; /* Menor espaço entre os elementos */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+
+.logo {
+    max-width: 70px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+}
+
+
+.tituloForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Menor espaçamento entre título e subtítulo */
+    text-align: center;
+}
+
+.tituloForm h1,
+.tituloForm p {
+    margin: 0;
+}
+
+.conteudoForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Diminui o espaçamento entre os campos */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px; /* Reduz a largura máxima do formulário */
+    padding: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Menor gap entre os campos */
+    width: 100%;
+}
+
+form input,
+form select,
+form textarea {
+    border: 1px solid ;
+    border-radius: 8px; /* Bordas mais suaves */
+    width: 100%;
+    max-width: 380px; /* Diminui a largura dos campos */
+    padding: 12px; /* Reduz o padding para uma aparência mais compacta */
+    font-size: 14px; /* Fonte menor */
+    font-weight: 300;
+    font-family: 'Epilogue', sans-serif;
+    font-style: italic;
+    box-sizing: border-box;
+}
+
+form input[type="file"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 380px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Epilogue', sans-serif;
+    font-style: italic;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 14px; /* Fonte menor nos labels */
+    color: #333;
+    text-align: left;
+    margin-bottom: 6px; /* Menor margem */
+}
+
+hr {
+    width: 80px; /* Diminui a largura da linha */
+    border-top: 2px solid #9C9C9C;
+    margin: 15px auto;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    width: 200px; /* Botão mais estreito */
+    padding: 15px;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: bold;
+    font-size: 16px; /* Fonte do botão menor */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+button:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 20px; /* Menor espaçamento em telas pequenas */
+        justify-content: flex-start;
+    }
+
+    .conteudoForm {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    form input {
+        padding: 10px; /* Menos padding nos campos */
+        font-size: 14px; /* Fonte menor para telas pequenas */
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+.arrowBack {
+    color: black; /* Altera a cor do ícone para vermelho */
+    position: top; /* Ajuste a posição conforme necessário */
+    top: 10px; /* Exemplo de deslocamento para cima */
+    left: 20px; /* Exemplo de deslocamento para a esquerda */
+}
+
+.img-login-cadastro{
+    width: 400px;
+}
+

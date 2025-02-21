@@ -157,4 +157,10 @@ CKEDITOR_CONFIGS = {
 MEDIA_URL = '/media/'  # URL para acessar os arquivos de mídia
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Caminho físico para os arquivos de mídia
 
-CKEDITOR_UPLOAD_PATH = "uploads/"  # 
+CKEDITOR_UPLOAD_PATH = "uploads/"  #
+
+
+AUTH_USER_MODEL = 'login.CustomUser'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
