@@ -26,7 +26,7 @@ class CustomUserAdmin(UserAdmin):
     )
 
     def get_groups(self, obj):
-        return ", ".join([group.name for group in obj.groups.all()])
+        return ", ".join([group.name for group in obj.groups.all().order_by('name')])
 
     get_groups.short_description = 'Grupos'
 

@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, ListView, CreateView, UpdateView,
 from .forms import CreatePostForm, CategoriaForm, ImageUploadForm
 from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
+from apps.login.models import CustomUser
 
 class InitialDashboardViews(LoginRequiredMixin, UserPassesTestMixin, ListView):
     template_name = "adminhub/initial_dashboard.html"
@@ -48,8 +48,10 @@ class CategoriaDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
-class UsersDashboardViews(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
+class UsersDashboardViews(LoginRequiredMixin, UserPassesTestMixin,ListView):
     template_name = "adminhub/users.html"
+    model = CustomUser
+    context_object_name = "usuarios"
 
     def test_func(self):
         return self.request.user.groups.filter(name='Administrador').exists()
@@ -69,6 +71,25 @@ class CreateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
+
+    def form_valid(self, form):
+        form.instance.autor = self.request.user
+        return super().form_valid(form)
+
+class UpdateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Noticias
+    template_name = "adminhub/update_post.html"
+    form_class = CreatePostForm
+    success_url = reverse_lazy("posts-path")
+
+    def test_func(self):
+        return self.request.user.groups.filter(name='Editor').exists()
+
+    def get_queryset(self):
+        return Noticias.objects.filter(autor=self.request.user)
+
+    def form_valid(self, form):
+        return super().form_valid(form)
 
 class ListNoticiaViews(LoginRequiredMixin, UserPassesTestMixin, ListView):
     template_name = "adminhub/posts.html"
@@ -95,6 +116,7 @@ class BannerUploadView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
+#Banner Views
 class BannerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Banners
     form_class = ImageUploadForm

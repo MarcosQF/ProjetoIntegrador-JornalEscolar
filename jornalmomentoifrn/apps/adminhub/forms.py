@@ -13,11 +13,16 @@ class CreatePostForm(forms.ModelForm):
         label="Conteúdo",
     )
 
+    thumb = forms.ImageField(
+        required=False,
+        label="Imagem de Capa"
+    )
+
     category = forms.ModelChoiceField(queryset=Categorias.objects.all(), empty_label="Selecione uma categoria")
     
     class Meta:
         model = Noticias
-        fields = ['title', 'content', 'category']
+        fields = ['title', 'content', 'category', 'thumb']
 
 
 class CategoriaForm(forms.ModelForm):
