@@ -7,6 +7,7 @@ urlpatterns = [
 
     path('noticias/criar/', CreateNoticiaView.as_view(), name="create-noticia-path"),
     path('noticias/deletar/<int:pk>/', DeleteNoticiaView.as_view(), name="delete-noticia"),
+    path('noticias/editar/<int:pk>/', UpdateNoticiaView.as_view(), name='update-noticia'),
     path('noticias/', ListNoticiaViews.as_view(), name="posts-path"),
     
     path('comentarios_denunciados/', ReportedCommentsViews.as_view(), name="comments-path"),

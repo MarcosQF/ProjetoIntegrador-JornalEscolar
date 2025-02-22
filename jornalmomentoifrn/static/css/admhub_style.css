@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 260px;
+  width: 265px;
   background: #062601;
   z-index: 100;
   transition: all 0.5s ease;
@@ -172,7 +172,7 @@ color: #f70707; /* Cor padrão do texto */
   width: 260px;
   display: flex;
   align-items: center;
-  
+
   background: #062601;
   padding: 12px 0;
   transition: all 0.5s ease;
@@ -197,12 +197,12 @@ color: #f70707; /* Cor padrão do texto */
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details img{
-  padding: 8px;
+  padding: 2px;
 }
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
   color: #fff;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
 }
