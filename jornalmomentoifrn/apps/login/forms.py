@@ -1,6 +1,7 @@
 from django import forms
 from .models import CustomUser
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.models import Group
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -10,15 +11,20 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ('nome_usuario', 'email')
+        fields = ('nome_usuario', 'email', 'imagem_perfil')
 
-    def clean_confirmar_senha(self):
-        senha = self.cleaned_data.get('password1')
-        confirmar_senha = self.cleaned_data.get('password2')
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        user.nome_usuario = self.cleaned_data['nome_usuario']
+        if commit:
+            user.set_password(self.cleaned_data['password1'])  # Usando password1
+            user.save()
+            
+        group = Group.objects.get(name='Leitor')
+        user.groups.add(group)
 
-        if senha != confirmar_senha:
-            raise forms.ValidationError("As senhas não coincidem.")
-        return confirmar_senha
+        return user
 
 
 class ProfileForm(forms.ModelForm):

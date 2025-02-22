@@ -15,9 +15,6 @@ venv.bak/
 *.pot
 *.pyc
 *.pyo
-*.db
-*.sqlite3
-*.sqlite3-journal
 *.log
 staticfiles/
 media/

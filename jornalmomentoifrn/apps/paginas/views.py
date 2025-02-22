@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-# Create your views here.
+from .mixins import GroupCheckMixin
 
-class IndexViews(TemplateView):
+class IndexViews(GroupCheckMixin,TemplateView):
   template_name = "paginas/modelo.html"
+
 
 class ModeloViews(TemplateView):
   template_name = "paginas/modelo.html"
