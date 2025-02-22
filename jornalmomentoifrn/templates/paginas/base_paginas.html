@@ -23,18 +23,18 @@
 <nav class="nav_header_menu">
     <!--  LOGO   -->
     <div class="nav_logo">
-        <img class="logo" src={% static "img/momentoIF.jpg" %} alt="">
+        <img class="logo" src="{% static 'img/momentoIF.jpg' %}" alt="">
     </div>
     <!--   LINKS   -->
     <ul class="nav_links">
-        <a href={% url "index" %} >
-        <li><span><i class="ri-home-4-line"></i></span> Inicio</li>
+        <a href="{% url 'index' %}">
+            <li><span><i class="ri-home-4-line"></i></span> Inicio</li>
         </a>
         <a href="#">
             <li>Quem somos</li>
         </a>
-        <a href={% url "mentes" %}>
-        <li>Mentes Inspiradoras</li>
+        <a href="{% url 'mentes' %}">
+            <li>Mentes Inspiradoras</li>
         </a>
     </ul>
     <!--   BUSCAR ENTRAR   -->
@@ -57,9 +57,11 @@
                 <li>
                     <a href="{% url 'perfil-update' user.pk %}">Dados Pessoais</a>
                 </li>
-                <li>
-                    <a href="{% url 'initial-dashboard-path' %}">Painel administrativo</a>
-                </li>
+                {% if is_editor %}
+                    <li>
+                        <a href="{% url 'initial-dashboard-path' %}">Painel administrativo</a>
+                    </li>
+                {% endif %}
                 <hr cla>
                 <li>
                     <form method="post" action="{% url 'logout' %}">
@@ -79,7 +81,8 @@
                 </button>
             </a>
         </div>
-        {% endif %}
+    </div>
+    {% endif %}
 </nav>
 {% endblock nav %}
 
@@ -93,7 +96,7 @@
 <footer>
     <div class="footer">
         <div class="img_footer">
-            <img src={% static "img/Campus Pau dos Ferros - Logo_Negat Vert 1.png" %} alt="">
+            <img src="{% static 'img/Campus Pau dos Ferros - Logo_Negat Vert 1.png' %}" alt="">
         </div>
         <div class="info_footer">
             <h3>Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte - Campus Pau dos Ferros</h3>

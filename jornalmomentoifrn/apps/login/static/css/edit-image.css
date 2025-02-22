@@ -18,7 +18,7 @@
   height: 50px;/* Tamanho do ícone */
 }
 
-button[type="submit"] {
+.botao-atualizar {
   background-color: #4CAF50; /* Cor de fundo verde */
   color: white; /* Cor do texto */
   font-size: 16px; /* Tamanho da fonte */
@@ -29,12 +29,12 @@ button[type="submit"] {
   transition: background-color 0.3s, transform 0.3s; /* Efeito de transição para a cor e o movimento */
 }
 
-button[type="submit"]:hover {
+.botao-atualizar:hover {
   background-color: #45a049; /* Cor de fundo quando o mouse está sobre o botão */
   transform: scale(1.05); /* Leve aumento do botão quando hover */
 }
 
-button[type="submit"]:active {
+.botao-atualizar:active {
   background-color: #388e3c; /* Cor do fundo quando o botão é pressionado */
   transform: scale(1); /* Volta ao tamanho original quando pressionado */
 }
