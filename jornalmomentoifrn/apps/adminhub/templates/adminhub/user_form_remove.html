@@ -1,0 +1,9 @@
+<h6>Tem certeza que deseja Remover o grupo Editor de : <strong>{{ object.nome_usuario }}</strong></h6>
+<form method="post" action="{% url 'remove_group_from_user' object.pk %}" >
+    {% csrf_token %}
+    <div>
+        {{ form.group }}
+    </div>
+    <br>
+<button type="submit" class="btn btn-danger">remover</button>
+</form>

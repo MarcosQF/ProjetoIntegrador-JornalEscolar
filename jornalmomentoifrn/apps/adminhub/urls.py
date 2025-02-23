@@ -22,4 +22,6 @@ urlpatterns = [
     path('banners/editar/<int:pk>', BannerUpdateView.as_view(), name='banner-edit'),
     path('banners/deletar/<int:pk>/', BannerDeleteView.as_view(), name='banner-delete'),
 
+    path('usuarios/<int:pk>/add-group/', AddGroupToUser.as_view(), name='add_group_to_user'),
+    path('usuarios/<int:pk>/remove_group', RemoveGroupFromUser.as_view(), name='remove_group_from_user'),
 ]

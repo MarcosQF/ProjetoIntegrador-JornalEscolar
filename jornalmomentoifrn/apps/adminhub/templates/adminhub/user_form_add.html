@@ -1,0 +1,9 @@
+<h6>Tem certeza que deseja atribuir o grupo Editor a: <strong>{{ object.nome_usuario }}</strong></h6>
+<form method="post" action="{% url 'add_group_to_user' object.pk %}">
+    {% csrf_token %}
+    <div>
+        {{ form.group }}
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

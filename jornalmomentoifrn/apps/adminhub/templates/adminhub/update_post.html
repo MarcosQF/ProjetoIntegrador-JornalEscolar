@@ -1,6 +1,6 @@
 {% extends 'admhub/base_admhub.html' %}
-{%load static%}
-{% block title %}Criar Notícias{% endblock %}
+{% load static %}
+{% block title %}Editar Notícias{% endblock %}
 
 {% block css %}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,38 +15,78 @@
     <meta charset="UTF-8">
     <title>Criar Post</title>
     <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
-
 </head>
 <body>
 
-<h2>Editar Post</h2>
+<div class="container mt-4">
+    <h2 class="mb-4">Criar Novo Post</h2>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.media }}
-    {% if form.errors %}
-    <ul>
-        {% for field in form %}
-        {% for error in field.errors %}
-        <li>{{ error }}</li>
-        {% endfor %}
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <div class="form">
-        <span class="title-field">Título:</span>
-        <span>{{ form.title }}</span>
-        <span class="title-field">Thumb:</span>
-        <span> {{ form.thumb }}</span>
-        <span class="category-field">{{ form.category }}</span>
-        <button class="send-button" type="submit">Publicar</button>
-    </div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
 
-    <div class="form">
-        <h4>Conteúdo:</h4>
-        <span class="content-field">{{ form.content }}</span>
-    </div>
-</form>
+        <!-- Grid Layout para o Formulário -->
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="id_title" class="form-label">Título:</label>
+                {{ form.title }}
+                {% if form.title.errors %}
+                    <div class="invalid-feedback d-block">
+                        <strong>{{ form.title.label }}:</strong>
+                        {% for error in form.title.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="id_thumb" class="form-label">Thumb:</label>
+                {{ form.thumb }}
+                {% if form.thumb.errors %}
+                    <div class="invalid-feedback d-block">
+                        <strong>{{ form.thumb.label }}:</strong>
+                        {% for error in form.thumb.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="id_category" class="form-label">Categoria:</label>
+                {{ form.category }}
+                {% if form.category.errors %}
+                    <div class="invalid-feedback d-block">
+                        <strong>{{ form.category.label }}:</strong>
+                        {% for error in form.category.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Botão de Envio -->
+        <div class="form-group mb-4">
+            <button class="send-button btn btn-success" type="submit">Publicar</button>
+        </div>
+
+        <!-- Campo de Conteúdo -->
+        <div class="form-group mb-3">
+            <h4>Conteúdo:</h4>
+            {{ form.content }}
+            {% if form.content.errors %}
+                <div class="invalid-feedback d-block">
+                    <strong>{{ form.content.label }}:</strong>
+                    {% for error in form.content.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </form>
+</div>
 
 </body>
 </html>

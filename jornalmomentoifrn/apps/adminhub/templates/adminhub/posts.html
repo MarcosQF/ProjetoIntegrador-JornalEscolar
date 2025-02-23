@@ -34,6 +34,16 @@
 
 <body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
 <div class="container w-full md:w-4.5/5 xl:w-/5/5  mx-auto px-2">
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
 
     <h1 class="flex items-center font-inter font-medium break-normal text-black-500 px-2 py-8 text-3xl md:text-3xl">
         Notícias
