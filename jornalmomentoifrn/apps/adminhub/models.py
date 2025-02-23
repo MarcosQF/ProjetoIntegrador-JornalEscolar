@@ -6,7 +6,7 @@ class Noticias(models.Model):
     title = models.CharField(max_length=80)
     content = RichTextUploadingField(blank=False)  
     category = models.ForeignKey('Categorias', on_delete=models.CASCADE)
-    thumb = models.ImageField(upload_to='noticias/thumbs/', blank=True, null=True)
+    thumb = models.ImageField(upload_to='noticias/thumbs/',blank=False)
     autor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='noticias')
     data_criacao = models.DateTimeField(auto_now_add=True)
 

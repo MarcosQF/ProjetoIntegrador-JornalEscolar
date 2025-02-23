@@ -36,6 +36,9 @@
         <a href="{% url 'mentes' %}">
             <li>Mentes Inspiradoras</li>
         </a>
+        <a href="{% url 'lista_noticias' %}">
+            <li>Noticias</li>
+        </a>
     </ul>
     <!--   BUSCAR ENTRAR   -->
     <div class="nav_buscar">
@@ -58,9 +61,9 @@
                     <a href="{% url 'perfil-update' user.pk %}">Dados Pessoais</a>
                 </li>
                 {% if is_editor %}
-                    <li>
-                        <a href="{% url 'initial-dashboard-path' %}">Painel administrativo</a>
-                    </li>
+                <li>
+                    <a href="{% url 'initial-dashboard-path' %}">Painel administrativo</a>
+                </li>
                 {% endif %}
                 <hr cla>
                 <li>
