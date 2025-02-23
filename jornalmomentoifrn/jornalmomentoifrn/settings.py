@@ -155,6 +155,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = False
+CKEDITOR_STORAGE_BACKEND = 'django.core.files.storage.FileSystemStorage'
 
 AUTH_USER_MODEL = 'login.CustomUser'
 LOGIN_URL = 'login'

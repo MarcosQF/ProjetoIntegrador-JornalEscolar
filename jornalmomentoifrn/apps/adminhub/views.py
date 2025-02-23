@@ -1,9 +1,13 @@
+from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView, DetailView
-from .forms import CreatePostForm, CategoriaForm, ImageUploadForm
+from .forms import CreatePostForm, CategoriaForm, ImageUploadForm, UserGroupForm
 from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from apps.login.models import CustomUser
+from ..login.models import CustomUser
+from django.contrib.auth.models import Group
+from django.contrib import messages
 
 class InitialDashboardViews(LoginRequiredMixin, UserPassesTestMixin, ListView):
     template_name = "adminhub/initial_dashboard.html"
@@ -28,6 +32,13 @@ class CategoriaCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     template_name = "adminhub/categoria_form.html"
     success_url = reverse_lazy("initial-dashboard-path")
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        messages.success(self.request, 'Categoria criada com sucesso!')
+
+        return response
+
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
@@ -37,6 +48,13 @@ class CategoriaUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = "adminhub/categoria_form_update.html"
     success_url = reverse_lazy("initial-dashboard-path")
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        messages.success(self.request, 'Categoria Alterada com sucesso!')
+
+        return response
+
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
@@ -44,6 +62,13 @@ class CategoriaDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Categorias
     template_name = 'adminhub/categoria_confirm_delete.html'
     success_url = reverse_lazy('initial-dashboard-path')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        messages.success(self.request, 'Categoria Deletada!')
+
+        return response
 
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
@@ -74,6 +99,9 @@ class CreateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.autor = self.request.user
+
+        response = super().form_valid(form)
+        messages.success(self.request, 'Noticia criada com sucesso!')
         return super().form_valid(form)
 
 class UpdateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -89,6 +117,8 @@ class UpdateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return Noticias.objects.filter(autor=self.request.user)
 
     def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, 'Noticia Alterada com sucesso!')
         return super().form_valid(form)
 
 class ListNoticiaViews(LoginRequiredMixin, UserPassesTestMixin, ListView):
@@ -139,6 +169,12 @@ class DeleteNoticiaView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, 'Noticia Deletada com sucesso!')
+
+        return response
+
 class BannerUploadView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Banners
     form_class = ImageUploadForm
@@ -147,6 +183,14 @@ class BannerUploadView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        messages.success(self.request, 'Banner Criado com sucesso!')
+
+        return response
+
 
 #Banner Views
 class BannerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -158,6 +202,14 @@ class BannerUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        messages.success(self.request, 'Banner alterado com sucesso!')
+
+        return response
+
+
 class BannerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Banners
     template_name = 'adminhub/banner_delete.html'
@@ -165,3 +217,49 @@ class BannerDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+
+        messages.success(self.request, 'Banner deletado com sucesso!')
+
+        return response
+
+
+class AddGroupToUser(LoginRequiredMixin,UpdateView):
+    model = CustomUser
+    form_class = UserGroupForm
+    template_name = 'adminhub/user_form_add.html'
+    success_url = reverse_lazy('users-dashboard-path')
+
+    def form_valid(self, form):
+        grupo = form.cleaned_data['group']
+        usuario = self.get_object()
+        usuario.groups.add(grupo)
+        usuario.save()
+
+        response = super().form_valid(form)
+        messages.success(self.request, 'Grupo Editor adicionado com sucesso!')
+
+        return super().form_valid(form)
+
+class RemoveGroupFromUser(LoginRequiredMixin, UpdateView):
+    model = CustomUser
+    form_class = UserGroupForm
+    template_name = 'adminhub/user_form_remove.html'
+    success_url = reverse_lazy('users-dashboard-path')
+
+    def form_valid(self, form):
+        grupo = form.cleaned_data['group']
+        usuario = self.get_object()
+        usuario.groups.remove(grupo)
+        usuario.save()
+
+        response = super().form_valid(form)
+        messages.success(self.request, 'Grupo Editor removido com sucesso!')
+        return super().form_valid(form)
+
+
+
+
+

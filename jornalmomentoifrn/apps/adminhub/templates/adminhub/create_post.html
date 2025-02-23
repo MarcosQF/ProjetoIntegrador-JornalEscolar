@@ -18,68 +18,75 @@
 </head>
 <body>
 
-<h2>Criar Novo Post</h2>
+<div class="container mt-4">
+    <h2 class="mb-4">Criar Novo Post</h2>
 
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.media }}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
 
-    <div class="form">
-        <div class="mb-3">
-            <label for="id_title" class="form-label">Título:</label>
-            {{ form.title }}
-            {% if form.title.errors %}
-                <div class="invalid-feedback d-block">
-                    <strong>{{ form.title.label }}:</strong>
-                    {% for error in form.title.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_thumb" class="form-label">Thumb:</label>
-            {{ form.thumb }}
-            {% if form.thumb.errors %}
-                <div class="invalid-feedback d-block">
-                    <strong>{{ form.thumb.label }}:</strong>
-                    {% for error in form.thumb.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <div class="mb-3">
-            <label for="id_category" class="form-label">Categoria:</label>
-            {{ form.category }}
-            {% if form.category.errors %}
-                <div class="invalid-feedback d-block">
-                    <strong>{{ form.category.label }}:</strong>
-                    {% for error in form.category.errors %}
-                        <p>{{ error }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </div>
-
-        <button class="send-button" type="submit">Publicar</button>
-    </div>
-
-    <div class="form">
-        <h4>Conteúdo:</h4>
-        {{ form.content }}
-        {% if form.content.errors %}
-            <div class="invalid-feedback d-block">
-                <strong>{{ form.content.label }}:</strong>
-                {% for error in form.content.errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
+        <!-- Grid Layout para o Formulário -->
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="id_title" class="form-label">Título:</label>
+                {{ form.title }}
+                {% if form.title.errors %}
+                    <div class="invalid-feedback d-block">
+                        <strong>{{ form.title.label }}:</strong>
+                        {% for error in form.title.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
-        {% endif %}
-    </div>
-</form>
+
+            <div class="col-md-6 mb-3">
+                <label for="id_thumb" class="form-label">Thumb:</label>
+                {{ form.thumb }}
+                {% if form.thumb.errors %}
+                    <div class="invalid-feedback d-block">
+                        <strong>{{ form.thumb.label }}:</strong>
+                        {% for error in form.thumb.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="id_category" class="form-label">Categoria:</label>
+                {{ form.category }}
+                {% if form.category.errors %}
+                    <div class="invalid-feedback d-block">
+                        <strong>{{ form.category.label }}:</strong>
+                        {% for error in form.category.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Botão de Envio -->
+        <div class="form-group mb-4">
+            <button class="send-button btn btn-success" type="submit">Publicar</button>
+        </div>
+
+        <!-- Campo de Conteúdo -->
+        <div class="form-group mb-3">
+            <h4>Conteúdo:</h4>
+            {{ form.content }}
+            {% if form.content.errors %}
+                <div class="invalid-feedback d-block">
+                    <strong>{{ form.content.label }}:</strong>
+                    {% for error in form.content.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </form>
+</div>
 
 </body>
 </html>

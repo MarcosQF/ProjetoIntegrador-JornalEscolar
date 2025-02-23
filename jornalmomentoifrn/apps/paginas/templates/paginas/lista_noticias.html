@@ -46,7 +46,7 @@ Noticias
             <p class="type">{{noticia.category}}</p>
             <h2 class="noticia-titulo" onclick="window.location.href='{% url 'noticia_detail' pk=noticia.pk %}'">
                 {{noticia.title}}</h2>
-            <span class>{{noticia.data_criacao}}</span>
+            <span>Criado há {{ noticia.data_criacao|timesince }}</span>
         </div>
     </div>
     {%endfor%}
