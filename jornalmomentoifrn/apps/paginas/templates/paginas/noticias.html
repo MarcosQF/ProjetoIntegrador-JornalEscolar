@@ -6,23 +6,12 @@ Notícias
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href= {% static "css/noticias.css" %} >
+<link rel="stylesheet" href= "{% static 'css/noticias.css' %}" >
 {% endblock %}
 
 {% block content %}
-
- <div class="container">
-    <h1>Cras nulla eros, bibendum id nibh eu, ornare aliquet ante, sunt di la pro.</h1>
-    <div class="image-container">
-      <img src= {% static "img/img_noticias/noticia_tuma.png" %} alt="Classroom">
-    </div>
-    <p>
-      Nulla vel suscipit ex, eget cursus tortor. Nullam in aliquam turpis. Curabitur eget nisi varius, suscipit mi et, vulputate turpis. Aliquam vel aliquet ipsum. Etiam mi arcu, ultricies ac lorem in, molestie tincidunt felis. Donec tempor mollis justo eget bibendum. Nullam sit amet nisl fringilla, pharetra magna in, placerat eros. Vestibulum arcu erat, faucibus id tincidunt vitae, mattis nec tortor. Vivamus non volutpat risus, quis cursus turpis. Etiam porta urna vel eros vulputate, sed eleifend tellus elementum. Cras egestas ullamcorper libero eu porta. Sed fermentum placerat auctor.
-    </p>
-    <h2>Aenean congue blandit nibh ut ultricies.</h2>
-    <p>
-      Nulla vel suscipit ex, eget cursus tortor. Nullam in aliquam turpis. Curabitur eget nisi varius, suscipit mi et, vulputate turpis. Aliquam vel aliquet ipsum. Etiam mi arcu, ultricies ac lorem in, molestie tincidunt felis. Donec tempor mollis justo eget bibendum. Nullam sit amet nisl fringilla, pharetra magna in, placerat eros. Vestibulum arcu erat, faucibus id tincidunt vitae, mattis nec tortor. Vivamus non volutpat risus, quis cursus turpis. Etiam porta urna vel eros vulputate, sed eleifend tellus elementum. Cras egestas ullamcorper libero eu porta. Sed fermentum placerat auctor.
-    </p>
+<div class="container">
+    {{ noticia.content|safe }}
     <div class="comments-section">
       <h3>COMENTÁRIOS (5)</h3>
       <div class="comment">
@@ -74,8 +63,8 @@ Notícias
         </div>
       </div>
     </div><div class="comments-section">
-     
-      
+
+
       <!-- Comentário principal -->
       <div class="comment">
         <div class="avatar">

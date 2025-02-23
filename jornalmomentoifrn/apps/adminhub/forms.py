@@ -14,7 +14,7 @@ class CreatePostForm(forms.ModelForm):
     )
 
     thumb = forms.ImageField(
-        required=False,
+        required=True,
         label="Imagem de Capa"
     )
 

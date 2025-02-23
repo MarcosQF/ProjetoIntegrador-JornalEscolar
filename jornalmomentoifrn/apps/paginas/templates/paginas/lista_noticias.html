@@ -1,0 +1,72 @@
+{% extends "paginas/base_paginas.html" %}
+{% load static %}
+
+{% block title %}
+Noticias
+{% endblock %}
+
+{% block css %}
+<!--<link rel="stylesheet" href= "{% static 'css/pedidos.css' %}">-->
+{% endblock %}
+
+{% block content %}
+<section class="filtro-pesquisa">
+    <form method="GET">
+
+        <div class="campo-filtro">
+            <label for="titulo">Buscar por Título</label>
+            <input type="text" name="titulo" id="titulo" value="{{ request.GET.titulo }}" placeholder="Buscar por título...">
+        </div>
+
+        <div class="campo-filtro">
+            <label for="categoria">Filtrar por Categoria</label>
+            <select name="categoria" id="categoria">
+                <option value="">Selecione uma categoria</option>
+                {% for categoria in categorias %}
+                    <option value="{{ categoria.nome_categoria }}"
+                            {% if categoria.nome_categoria == request.GET.categoria %}selected{% endif %}>
+                        {{ categoria.nome_categoria }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn-filtrar">Filtrar</button>
+    </form>
+</section>
+
+
+<section class="todas-noticias">
+    {%for noticia in noticias %}
+    <div class="noticia_id">
+        <div class="img_noticia">
+            <img src="{{noticia.thumb.url}}" alt="">
+        </div>
+        <div class="noticia_id_esquerda">
+            <p class="type">{{noticia.category}}</p>
+            <h2 class="noticia-titulo" onclick="window.location.href='{% url 'noticia_detail' pk=noticia.pk %}'">
+                {{noticia.title}}</h2>
+            <span class>{{noticia.data_criacao}}</span>
+        </div>
+    </div>
+    {%endfor%}
+</section>
+
+<div class="pagination">
+    <div class="pagination-buttons">
+        {% if page_obj.has_previous %}
+            <a class="btn-pagination" href="?page=1">&laquo; Primeira</a>
+            <a class="btn-pagination" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span class="current-page">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a class="btn-pagination" href="?page={{ page_obj.next_page_number }}">Próxima</a>
+            <a class="btn-pagination" href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock  %}

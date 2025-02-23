@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView, DetailView
 from .forms import CreatePostForm, CategoriaForm, ImageUploadForm
 from .models import *
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -98,6 +98,38 @@ class ListNoticiaViews(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
+
+class NoticiaDetailView(DetailView):
+    model = Noticias
+    template_name = "paginas/noticias.html"
+    context_object_name = "noticia"
+
+class NoticiasListView(ListView):
+    model = Noticias
+    template_name = 'paginas/lista_noticias.html'
+    context_object_name = 'noticias'
+    paginate_by = 2
+    ordering = ['-data_criacao']
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        titulo = self.request.GET.get('titulo', '')
+        if titulo:
+            queryset = queryset.filter(title__icontains=titulo)
+
+        categoria = self.request.GET.get('categoria', '')
+        if categoria:
+            queryset = queryset.filter(category__nome_categoria=categoria)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['categorias'] = Categorias.objects.all()
+        return context
+
 
 class DeleteNoticiaView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Noticias
