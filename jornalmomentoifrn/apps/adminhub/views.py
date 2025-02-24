@@ -106,7 +106,7 @@ class CreateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         messages.success(self.request, 'Noticia criada com sucesso!')
         return super().form_valid(form)
 
-class UpdateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class UpdateNoticiaView(LoginRequiredMixin,  UpdateView):
     model = Noticias
     template_name = "adminhub/update_post.html"
     form_class = CreatePostForm
@@ -115,8 +115,6 @@ class UpdateNoticiaView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
-    def get_queryset(self):
-        return Noticias.objects.filter(autor=self.request.user)
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -140,7 +138,7 @@ class NoticiasListView(ListView):
     model = Noticias
     template_name = 'paginas/lista_noticias.html'
     context_object_name = 'noticias'
-    paginate_by = 2
+    paginate_by = 4
     ordering = ['-data_criacao']
 
     def get_queryset(self):

@@ -11,7 +11,6 @@ class IndexViews(GroupCheckMixin,ListView):
         context = super().get_context_data(**kwargs)
 
         context['banners'] = Banners.objects.all()
-        context['noticias'] = Noticias.objects.all()[:3]
         context['noticias'] = Noticias.objects.all().order_by('-data_criacao')[:3]
 
         return context

@@ -71,9 +71,10 @@
                 <td class="font-inter font-light">{{noticia.category}}</td>
                 <td class="font-inter font-light">{{noticia.data_criacao}}</td>
                 <td class="font-inter font-light">
-                    <a href="{% url 'update-noticia' pk=noticia.pk %}">
-                        <i class='bx bx-message-square-edit i-del-c' style='color:#008000'></i>
-                    </a>
+
+                    <i onclick="window.location.href='{% url 'update-noticia' pk=noticia.pk %}';"
+                       class='bx bx-message-square-edit i-del-c' style='color:#008000'></i>
+
                     <i class='bx bx-message-square-x i-del-c' data-bs-toggle="modal" data-bs-target="#categoriaModal"
                        onclick="loadModal('{% url 'delete-noticia' noticia.pk %}', 'Deletar Noticia')"
                        style='color:#db1010'></i>
