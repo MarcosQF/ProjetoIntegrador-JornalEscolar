@@ -11,6 +11,8 @@ Notícias
 
 {% block content %}
 <div class="container">
+    <h4> {{noticia.title}} </h4>
+  <br>
     {{ noticia.content|safe }}
     <div class="comments-section">
       <h3>COMENTÁRIOS (5)</h3>
@@ -165,30 +167,5 @@ Notícias
     </div>
   </div>
 
-<div class="container">
-    <h2>Matérias Relacionadas</h2>
-    <div class="related-posts">
-      <!-- Card 1 -->
-      <div class="card">
-        <img src= {% static "img/img_noticias/image1.png" %} alt="Instituto Federal">
-        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
-      </div>
-      <!-- Card 2 -->
-      <div class="card">
-        <img src= {% static "img/img_noticias/image2.png" %} alt="Graduação em Agroindústria">
-        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
-      </div>
-      <!-- Card 3 -->
-      <div class="card">
-        <img src= {% static "img/img_noticias/image3.png" %} alt="Campus Instituto">
-        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
-      </div>
-      <!-- Card 4 -->
-      <div class="card">
-        <img src= {% static "img/img_noticias/image4.png" %} alt="Formatura Cursos Técnicos">
-        <p>In vitae blandit orci, semper aliquet odio. Nam non purus feugiat.</p>
-      </div>
-    </div>
-  </div>
   
 {% endblock  %}
