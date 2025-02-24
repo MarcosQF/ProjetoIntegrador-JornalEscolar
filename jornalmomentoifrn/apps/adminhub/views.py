@@ -21,6 +21,8 @@ class InitialDashboardViews(LoginRequiredMixin, UserPassesTestMixin, ListView):
 
         context['images'] = Banners.objects.all()
         context['categorias'] = Categorias.objects.all()
+        context['users_total'] = CustomUser.objects.count()
+        context['noticias_total'] = Noticias.objects.count()
 
         return context
 
